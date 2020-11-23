@@ -3,27 +3,27 @@
 
 ### Features
 
-* Beautiful redesigned login screen
-* Modern typography using Roboto Condensed
-* Extended breadcrumb with edit links
-* Extends the default AdminThemeUikit so you can continue using all current (and future) AdminThemeUikit features
-* Option to activate theme for all users
+* Minimal black and white admin theme with great contrast
+* Fixed masthead navigation
+* Direct access to page tree navigation inside page dropdown 
+* Less distraction for editors
+* Options to customise the ui
 * Compatibility with AdminOnStreoids and other third party modules
 
 
-## Less distraction for editors
+#### Less distraction for editors
 ![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/edit.gif "Page edit screen")
 
-## Direct access to page tree navigation inside dropdown 
+#### Direct access to page tree navigation inside dropdown 
 ![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/nav.png "Navigation")
 
-## Page tree
+#### Page tree
 ![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/tree.png "Page Tree")
 
-## Options to customise the ui
+#### Options to customise the ui
 ![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/options.png "Options")
 
-## Login
+#### Login
 ![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/login.png "Login")
 
 
@@ -39,9 +39,6 @@ Process Wire 3.0.100 or greater
 3. Click “Download And Install“
 4. On the overview, click “Download And Install“ again
 5. On the following screen, click “Install Now“
-
-![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/installation.png "Installation using URL")
-
 
 ### Manually
 
