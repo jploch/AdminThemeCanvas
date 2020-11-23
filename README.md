@@ -1,6 +1,5 @@
 # Admin Theme Canvas
-#### A minimal admin theme with optimised page editor UI, based on Uikit 3
-#### Currently this is an early beta. It's not recomended to use it for producton yet.
+#### A minimal admin theme with optimised page editor UI, based on Uikit 3. Currently this is an early beta. It's not recomended to use it for producton yet.
 
 ### Features
 
