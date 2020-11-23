@@ -1,0 +1,253 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+@triangle-witdh: 8px;
+
+// remove the original triangle 
+.aos_adminLangSwitcher ul:before,
+.pw-dropdown-toggle:after,
+.pw-button-dropdown:after {
+  display: none !important;
+}
+
+// rounded corners and triangle
+
+body > ul.ui-autocomplete,
+ul.breadcrumb-dropdown,
+.aos_adminLangSwitcher > ul,
+body > ul.pw-dropdown-menu.ui-menu {
+
+  color: @pw-dropdown-nav-item-color;
+
+  border-radius: @pw-dropdown-list-border-radius;
+
+  border: @theme-dropdown-border;
+  box-shadow: @pw-dropdown-box-shadow;
+
+  li.ui-menu-item a small {
+    color: inherit !important;
+    opacity: 0.9;
+  }
+
+
+  .uk-nav-divider {
+    border-color: @theme-dropdown-hover-background;
+    margin-left: @triangle-witdh/2;
+    margin-right: @triangle-witdh/2;
+  }
+
+  // triangle
+  &:after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 @triangle-witdh @triangle-witdh @triangle-witdh;
+    border-color: transparent transparent @pw-dropdown-background transparent;
+    position: absolute;
+    top: -@triangle-witdh;
+    z-index: 99;
+  }
+
+  &[data-at*="left"] {
+    &:after {
+      right: auto;
+      left: 15px;
+    }
+  }
+
+  &[data-at*="right"] {
+    &:after {
+      left: auto !important;
+      right: 20px !important;
+    }
+  }
+
+  &.prnav {
+    margin-top: -5px;
+
+    li {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+
+      > a {
+        padding: @pw-dropdown-item-padding-vertical @pw-dropdown-item-padding-horizontal  !important;
+      }
+    }
+
+    &:after {
+      //               left: 10%;
+    }
+  }
+
+  a:hover {
+    box-shadow: none;
+  }
+
+  // submenu
+  ul.ui-menu {
+    border-top-left-radius: 0 !important;
+    transform: translateY(-3px);
+
+    border-width: 0px !important;
+
+    &[style*="left"] {
+      left: 99% !important;
+    }
+
+    &[style*="right"] {
+      right: 99% !important;
+    }
+
+    > li:first-child,
+    > li:first-child > a {
+      border-top-left-radius: 0;
+    }
+
+    // smaller…
+    li > a {
+      padding-top: 0.25em !important;
+      padding-bottom: 0.25em !important;
+    }
+  }
+
+
+  > li:first-child,
+  > li:first-child > a,
+  ul > li:first-child,
+  ul > li:first-child > a {
+    border-top-left-radius: @pw-dropdown-list-border-radius;
+    border-top-right-radius: @pw-dropdown-list-border-radius;
+  }
+
+  > li:last-child,
+  > li:last-child > a,
+  ul > li:last-child,
+  ul > li:last-child > a {
+    border-bottom-left-radius: @pw-dropdown-list-border-radius;
+    border-bottom-right-radius: @pw-dropdown-list-border-radius;
+  }
+
+}
+
+
+body > ul.ui-autocomplete {
+  // fix positioning:
+  border: @triangle-witdh solid transparent;
+  background-clip: content-box;
+  border-radius: 14px;
+  margin-bottom: -8px;
+  box-shadow: none;
+
+  .uk-nav-header {
+    font-weight: bold;
+    margin-top: 0;
+    color: inherit;
+  }
+
+  &:after {
+    right: 20px;
+    top: -8px;
+  }
+
+
+  .uk-nav-header,
+  .ui-menu-item a {
+    padding: 5px 10px;
+  }
+
+  a:hover {
+    .uk-text-muted {
+      color: inherit !important;
+      opacity: 0.9;
+    }
+  }
+
+}
+
+
+// breadcrumb and dropdown:
+#main .uk-breadcrumb {
+  padding-bottom: 0; // wrongly nested
+
+  .uk-breadcrumb {
+    margin-bottom: 0px;
+  }
+
+  > li {
+    font-size: .875rem;
+    color: @theme-muted-text-color;
+
+    .dropdown-toggle {
+      margin-bottom: 0px;
+      color: @theme-text-color;
+      font-weight: bold;
+      font-size: 1.2em;
+
+      &:hover {
+        background: none;
+        color: @theme-primary-color;
+        text-shadow: none;
+      }
+
+      .fa {
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  ul.breadcrumb-dropdown {
+    border-top-left-radius: 3px;
+
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      left: 3px;
+    }
+
+    background: @pw-dropdown-background;
+    box-shadow: @pw-dropdown-box-shadow;
+    border: @theme-dropdown-border;
+
+    li.add-new {
+      font-weight: 500;
+
+      i {
+        margin-right: 5px;
+        color: @pw-dropdown-nav-item-color;
+      }
+    }
+
+    li.page-current {
+      a {
+        color: @pw-dropdown-nav-item-hover-color;
+        background: @pw-dropdown-nav-item-hover-background;
+        font-weight: 500;
+      }
+    }
+
+    > li > a {
+      color: @pw-dropdown-nav-item-color;
+      background: @pw-dropdown-background;
+      border-bottom-width: 0px;
+      padding: 5px 15px;
+
+      &:active,
+      &:hover {
+        background: @theme-dropdown-hover-background;
+        color: @pw-dropdown-highlight-color;
+      }
+    }
+  }
+}

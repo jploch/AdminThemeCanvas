@@ -1,0 +1,28 @@
+// uikit source
+@import "../src/less/uikit.theme.less";
+
+// main accent color:
+// pw black
+@theme-primary-color: #000;
+
+// Original Theme
+@offcanvas-bar-width: 350px;
+
+@pw-icon-font-size: 14px;
+@pw-tiny-font-size: 12px;
+@pw-tabs-margin-bottom: 0; // margin between tabs and whatever is below
+@pw-body-background: #fff;
+
+// Theme
+@import "pw/_import.less";
+
+// AdminThemeCanvas Custom Styles
+@import "fonts/fonts.less";
+@import "theme/main.less";
+@import "theme/module-config.less";
+@import "theme/black-login.less";
+
+/* Overrides… */
+@theme-muted-background: lighten(@theme-primary-color, 90%);
+@theme-dropdown-background: lighten(@theme-primary-color, 15%);
+@theme-primary-color-verylight: lighten(@theme-primary-color, 90%);

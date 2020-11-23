@@ -1,0 +1,37 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+@import "../variables.less";
+
+// header add transparency (for sticky)
+.pw {
+
+  body {
+    min-width: 100%;
+    min-height: 100vh;
+  }
+
+  #pw-mastheads > header {
+    box-shadow: none;
+  }
+
+  #pw-footer {
+    padding-top: 20px;
+    border-top: @pw-inputfield-border;
+    color: lighten(@theme-muted-text-color, 20%);
+
+    small,
+    a {
+      color: lighten(@theme-muted-text-color, 10%);
+    }
+  }
+
+  // remove lister version
+  .detail.version {
+    display: none;
+  }
+}

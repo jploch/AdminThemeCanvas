@@ -1,0 +1,65 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+/**********************************************************************
+ * Styles
+ *
+ * Adjustments to the default Uikit admin theme styles to give more
+ * the look and feel of AdminThemeReno.
+ *
+ */
+
+.pw {
+  font-family: @global-font-family;
+  letter-spacing: 0.03em;
+}
+
+.pw a:hover {
+  text-decoration: none;
+}
+
+.hook-base-h2,
+.hook-base-h3,
+.hook-base-h4 {
+  color: @theme-secondary-headline-color;
+}
+
+img.pw-logo {
+  max-height: 40px;
+}
+
+img.pw-logo-native {
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+#main .uk-description-list dt {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#pw-content-head {
+  h1 {
+    color: @theme-primary-headline-color;
+  }
+}
+
+.pw-panel-container {
+  position: fixed;
+}
+
+.pw .fa-fw {
+  //     text-align: left;
+}
+
+button:focus {
+  outline: 0;
+}

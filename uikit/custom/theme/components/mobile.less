@@ -1,0 +1,94 @@
+// Styles specific to mobile presentation
+
+#pw-masthead-mobile {
+  display: none !important;
+}
+
+#pw-masthead {
+  top: 0 !important;
+}
+
+
+#pw-masthead.pw-masthead-hidden {
+
+  .uk-navbar-right {
+    display: none !important;
+  }
+
+  .uk-navbar-left {
+    margin-left: 40px;
+  }
+
+  .pw-tree-nav {
+    display: none !important;
+  }
+
+}
+
+//#pw-masthead.pw-masthead-hidden
+
+// hamburger toggle icon that appears at mobile resolutions
+#offcanvas-toggle {
+  position: fixed !important;
+  z-index: 999999;
+  top: 14px !important;
+  left: 14px !important;
+  width: 20px !important;
+  font-size: 14px !important;
+}
+
+// if size causes masthead to break, hide the primary navbar
+#pw-masthead.pw-masthead-broken {
+  .pw-primary-nav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: @breakpoint-small-max) {
+
+  .uk-navbar-right {
+
+    .pw-user-nav li a#tools-toggle {
+      font-size: 0 !important;
+
+      .fa-user-circle {
+        font-size: 19px !important;
+      }
+    }
+  }
+
+  .uk-navbar-right li:last-child a {
+    padding: 0 0 0 15px;
+  }
+
+  #pw-masthead .uk-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  // make the top submit buttons no longer float right when at small viewport sizes
+  #pw-content-head-buttons {
+    margin-bottom: @global-margin;
+
+    button,
+    .pw-button-dropdown-wrap {
+      float: none;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body:not(.pw-ready) #pw-masthead > * {
+    //          display: none;
+  }
+
+  #pw-masthead .uk-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .uk-navbar-right {
+    display: none !important;
+  }
+
+}

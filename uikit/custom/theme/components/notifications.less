@@ -1,0 +1,148 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+// Notices ----------------------------------------------------
+/* Notifications */
+
+#pw-mastheads .NotificationBug {
+     position: relative;
+     left: auto;
+     right: 10px;
+     top: 10px;
+     line-height: 24px;
+     min-height: 24px;
+     border-radius: 50%;
+
+     box-shadow: @pw-box-shadow-small;
+     border-width: 0px;
+     z-index: 999999999;
+     background-image: linear-gradient(darken(@theme-primary-color, 5%), darken(@theme-primary-color, 5%));
+
+     .qty {
+          font-family: inherit;
+          font-weight: bold;
+     }
+}
+
+#NotificationMenu {
+     position: fixed;
+     z-index: 99999999;
+     background: transparent;
+     right: 0;
+     top: 50px;
+     width: 100%;
+
+     li {
+          padding: 0;
+          margin: 0;
+          border-bottom-width: 0;
+          border-radius: @pw-dropdown-list-border-radius;
+
+          > div {
+               padding: 0;
+
+               p {
+                    padding-right: 33px;
+               }
+          }
+
+          .NotificationTitle {
+               font-weight: normal;
+          }
+
+
+          .NoticeMessage {
+               border-width: 0;
+               color: @theme-text-color;
+          }
+
+          .created {
+               display: none;
+          }
+     }
+}
+
+
+#pw-mastheads .pw-notices {
+     margin-top: 0;
+     position: relative;
+     z-index: 3;
+     top: 50px;
+     right: 0;
+     width: 100%;
+     box-sizing: border-box;
+
+     > li {
+          margin: 0;
+          box-shadow: @pw-dropdown-box-shadow;
+          border-radius: @pw-dropdown-list-border-radius;
+          border-bottom-width: 0;
+
+     }
+
+     li > div {
+          //          padding: 0 10px;
+     }
+}
+
+#notices {
+     a.notice-remove {
+          color: inherit;
+     }
+}
+
+#NotificationGhosts {
+
+     width: 30vw;
+     min-width: 300px;
+     max-width: 80%;
+
+     .removed {
+          display: none;
+     }
+
+     li {
+          opacity: 1 !important;
+          padding-left: 20px;
+          padding-right: 20px;
+          margin-bottom: 10px;
+     }
+
+     &.NotificationGhostsRight {
+          top: 20px;
+     }
+
+
+     li div.NotificationGhost {
+          display: block;
+          box-shadow: @pw-dropdown-box-shadow;
+          border-radius: @pw-dropdown-list-border-radius;
+          border-bottom-width: 0;
+          color: @global-inverse-color;
+          font-weight: normal;
+          margin: 0;
+          text-overflow: ellipsis;
+          overflow-x: hidden;
+          text-align: left;
+          width: 100%;
+     }
+
+     .NoticeMessage {
+          background: @alert-primary-background;
+     }
+
+     .NoticeError {
+          background: @alert-danger-background;
+     }
+
+     .NoticeWarning {
+          background: @alert-warning-background;
+     }
+}

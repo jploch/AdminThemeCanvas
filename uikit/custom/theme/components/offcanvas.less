@@ -1,0 +1,112 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+@import "../variables.less";
+
+
+// Offcanvas -------------------------------------------------
+
+//.uk-offcanvas-container main {
+//  margin-left: 330px;
+//}
+
+#offcanvas-toggle {
+  cursor: pointer;
+
+  > i {
+    color: @theme-masthead-icon-color;
+  }
+
+  &:hover > i {
+    color: @theme-masthead-link-color  !important;
+  }
+}
+
+#offcanvas-nav {
+  z-index: 9998 !important;
+  color: @theme-offcanvas-text-color;
+
+  .page-3- {
+    display: block !important;
+  }
+
+  .uk-offcanvas-bar {
+    top: 50px !important;
+    background: @theme-offcanvas-background;
+    padding: 0;
+    box-shadow: none;
+    border-right: 1px solid darken(@theme-offcanvas-background, 10%);
+    width: @offcanvas-bar-width  !important;
+  }
+
+  #offcanvas-nav-header {
+    display: none;
+  }
+
+  .pw-sidebar-nav {
+    li > a {
+      padding-left: 20px;
+      padding-right: 20px;
+      color: @theme-offcanvas-link-color;
+
+      &:hover,
+      &:hover i {
+        color: @theme-offcanvas-link-hover-color  !important;
+      }
+    }
+
+
+    li a i {
+      color: @theme-masthead-icon-color  !important;
+    }
+
+    li a:hover i {
+      color: @theme-offcanvas-link-hover-color  !important;
+    }
+
+
+    li.uk-open {
+      padding-bottom: 0;
+      background: lighten(@theme-offcanvas-background, 3%);
+
+      > a {
+        color: @theme-offcanvas-link-open-color;
+
+        i {
+          color: @theme-offcanvas-link-hover-color  !important;
+        }
+      }
+    }
+
+    li.pw-nav-spinner {
+      padding-left: 20px;
+    }
+  }
+
+  .pw-search-form {
+    padding: 20px 20px 5px 20px;
+  }
+
+  .pw-search-input {
+    background: @theme-offcanvas-search-background;
+    border-radius: 5px;
+  }
+
+  .pw-logo {
+    display: none;
+  }
+}
+
+// Other ---------------------------------------------------------
+html.pw-sidebar-frame,
+html.pw-sidebar-frame body {
+  background: @global-muted-background;
+
+  #main {
+    background: @global-muted-background;
+  }
+}
