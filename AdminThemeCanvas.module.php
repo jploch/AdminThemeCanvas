@@ -137,24 +137,6 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
      
 }); 
       
-     // hide field title setting
-//      wire()->addHookBefore('InputfieldWrapper::render', function($event) {
-  //
-  // $wrapper = $event->object;
-  //
-  // foreach ($wrapper->getChildren() as $f) {
-  //
-  //// if(wire('fields')->get()) {
-  // // $f->get('hideFieldTitle')->addClass('hideFieldTitle');
-  // // $f->set('wrapClass', "hideFieldTitle");
-  // // }
-  // // Only fieldtypes can have tags && make sure the fieldtype has tags
-  // if ($f->hasFieldtype && !empty(wire('fields')->get($f->name)->tags)) {
-  // $f->set('wrapClass', "tag-" . wire('fields')->get($f->name)->tags);
-  // }
-  // }
-  //
-  //});
 	
 		$sidenav = strpos($this->layout, 'sidenav') === 0;
 
