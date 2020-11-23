@@ -3,7 +3,6 @@
 
 ### Features
 
-* Five unique color options: blue, vibrant, black & pink
 * Beautiful redesigned login screen
 * Modern typography using Roboto Condensed
 * Extended breadcrumb with edit links
@@ -16,13 +15,16 @@
 ![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/edit.gif "Page edit screen")
 
 ## Direct access to page tree navigation inside dropdown 
-![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/nav.png "Page edit screen")
+![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/nav.png "Navigation")
 
 ## Page tree
-![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/tree.png "Page edit screen")
+![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/tree.png "Page Tree")
 
 ## Options to customise the ui
-![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/options.png "Page edit screen")
+![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/options.png "Options")
+
+## Login
+![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/login.png "Login")
 
 
 ## Requirements
