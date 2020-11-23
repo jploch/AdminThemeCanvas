@@ -1,5 +1,5 @@
 # Admin Theme Canvas
-#### A minimal theme with optimised page editor UI, based on Uikit 3
+#### A minimal admin theme with optimised page editor UI, based on Uikit 3
 
 ### Features
 
@@ -12,16 +12,22 @@
 * Compatibility with AdminOnStreoids and other third party modules
 
 
-# Less distraction for editors
-
+## Less distraction for editors
 ![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/edit.gif "Page edit screen")
 
+## Direct access to page tree navigation inside dropdown 
+![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/nav.png "Page edit screen")
+
+## Page tree
+![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/tree.png "Page edit screen")
+
+## Options to customise the ui
+![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/options.png "Page edit screen")
 
 
 ## Requirements
 
-Requires AdminThemeUikit installed and activated.
-
+Process Wire 3.0.100 or greater
 
 ## Installation
 
@@ -32,13 +38,13 @@ Requires AdminThemeUikit installed and activated.
 4. On the overview, click “Download And Install“ again
 5. On the following screen, click “Install Now“
 
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeCanvas/master/docs/images/installation.png "Installation using URL")
+![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/installation.png "Installation using URL")
 
 
 ### Manually
 
 1. Make sure the above requirements are met
-2. Download the theme files from [GitHub](https://github.com/noelboss/AdminThemeCanvas) or the [ProcessWire Modules Repository](https://modules.processwire.com/modules/admin-theme-uikit/).
+2. Download the theme files from [GitHub](https://github.com/jploch/AdminThemeCanvas) 
 3. Copy all of the files for this module into /site/modules/AdminThemeCanvas/
 4. Go to “Modules > Refresh” in your admin
 5. Click “Install“ on the “AdminThemeCanvas“ Module
@@ -64,12 +70,8 @@ Now you can modify the less file(s) under “AdminThemeCanvas/uikit/custom/…�
 The primary theme file is “AdminThemeCanvas/uikit/custom/theme/main.less“.
 
 
-## Update to latest AdminThemeUikit
-
-There is a [script](https://github.com/noelboss/AdminThemeCanvas/blob/master/upgrade-theme.sh) that you can run to update the dependencies. It makes a backup of the current theme, downloads the latest AdminThemeUikit and puts everything back together.
-
 ## License: MIT
 
-See included [LICENSE](https://github.com/noelboss/AdminThemeCanvas/blob/master/LICENSE) file for full license text.
+See included [LICENSE](https://github.com/jploch/AdminThemeCanvas/blob/master/LICENSE) file for full license text.
 
-© [noelboss.com](https://www.noelboss.com) | [ProcessWire Modules](https://modules.processwire.com/authors/noelboss/)
+© [jploch.com](https://www.janploch.de) | [ProcessWire Modules](https://modules.processwire.com/authors/jploch/)
