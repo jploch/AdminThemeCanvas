@@ -12,44 +12,10 @@
 * Compatibility with AdminOnStreoids and other third party modules
 
 
-## Release Updates
+# Less distraction for editors
 
-Checkout the [Releases Page and subscribe to updates](http://releases.noelboss.com/AdminThemeCanvas) or take a look at the [CHANGELOG.md](https://github.com/noelboss/AdminThemeCanvas/blob/master/CHANGELOG.md) file for a full change log.
+![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/master/docs/images/edit.png "Default ProcessWire Blue Page Tree")
 
-
-# Color Variants:
-
-### ProcessWire Blue
-
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeCanvas/master/docs/images/pw-pt.png "Default ProcessWire Blue Page Tree")
-
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeCanvas/master/docs/images/pw.png "Default ProcessWire Blue")
-
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeCanvas/master/docs/images/pw-login.png "Default ProcessWire Blue Login")
-
-### Dark Black
-
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeCanvas/master/docs/images/black-pt.png "Dark Black Page Tree")
-
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeCanvas/master/docs/images/black.png "Dark Black")
-
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeCanvas/master/docs/images/black-login.png "Dark Black Login")
-
-
-### Vibrant Blue
-
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeCanvas/master/docs/images/vibrant.png "Vibrant Blue")
-
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeCanvas/master/docs/images/vibrant-login.png "Vibrant Blue Login")
-
-
-### Happy Pink
-
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeCanvas/master/docs/images/pink.png "Happy Pink")
-
-### Smooth Green *new with 0.6.1*
-
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeCanvas/master/docs/images/green.png "Smooth Green")
 
 
 ## Requirements
