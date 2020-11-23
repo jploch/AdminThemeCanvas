@@ -17858,7 +17858,6 @@ body > ul.pw-dropdown-menu.ui-menu ul.ui-menu[style*="left"],
   left: 199px !important;
 }
 body > ul.pw-dropdown-menu.page {
-  left: 25px !important;
   width: 200px !important;
 }
 ul.pw-dropdown-menu.ui-menu.prnav.page li > a {
@@ -17869,9 +17868,6 @@ body > ul.pw-dropdown-menu.page ul.ui-menu[style*="left"] ul,
 .pw-dropdown-menu.ui-menu.page .ui-menu ul {
   width: 200px !important;
   height: 100%;
-}
-.pw body {
-  position: relative;
 }
 .pw-dropdown-menu.ui-menu.prnav .ui-menu li {
   background-color: #262626;
