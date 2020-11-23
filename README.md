@@ -14,7 +14,7 @@
 
 # Less distraction for editors
 
-![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/edit.png "Default ProcessWire Blue Page Tree")
+![alt text](https://raw.githubusercontent.com/jploch/AdminThemeCanvas/main/docs/images/edit.gif "Page edit screen")
 
 
 
