@@ -3,12 +3,11 @@
 
 ### Features
 
-* Minimal black and white admin theme with great contrast
+* Minimal black and white admin theme 
 * Fixed masthead navigation
 * Direct access to page tree navigation inside page dropdown 
 * Less distraction for editors
 * Options to customise the ui
-* Compatibility with AdminOnStreoids and other third party modules
 
 
 #### Less distraction for editors
