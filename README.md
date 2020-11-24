@@ -31,15 +31,6 @@ Currently this is an early beta. It's not recommended to use it for producton ye
 
 Process Wire 3.0.100 or greater
 
-## Installation
-
-1. Make sure the above requirements are met
-1. Go to “Modules > Site > Add New“
-2. Paste the Module Class Name “AdminThemeCanvas“ into the field “Add Module From Directory“
-3. Click “Download And Install“
-4. On the overview, click “Download And Install“ again
-5. On the following screen, click “Install Now“
-
 ### Manually
 
 1. Make sure the above requirements are met
@@ -47,6 +38,7 @@ Process Wire 3.0.100 or greater
 3. Copy all of the files for this module into /site/modules/AdminThemeCanvas/
 4. Go to “Modules > Refresh” in your admin
 5. Click “Install“ on the “AdminThemeCanvas“ Module
+6. Go to your user profile page and change the theme to Admin Theme Canvas
 
 
 ## Modify yourself
