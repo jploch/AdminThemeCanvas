@@ -14095,7 +14095,7 @@ a.tooltip:hover {
   border: none;
 }
 .ui-menu .uk-nav-header {
-  padding: 3px 10px;
+  padding: 4px 10px;
   color: #333333;
 }
 .ui-menu .pw-has-items-icon {
@@ -14126,7 +14126,7 @@ a.tooltip:hover {
 }
 .ui-menu .ui-menu-item a {
   color: #fff;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border: none;
   border-radius: 0;
   margin: 0 !important;
@@ -14201,7 +14201,7 @@ a.tooltip:hover {
   margin-top: 0;
 }
 .pw-dropdown-menu-shorter .ui-menu-item:last-child a {
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 .pw-user-nav > li > a > img {
   border-radius: 50%;
@@ -16363,7 +16363,7 @@ body > ul.ui-autocomplete.prnav li > a,
 ul.breadcrumb-dropdown.prnav li > a,
 .aos_adminLangSwitcher > ul.prnav li > a,
 body > ul.pw-dropdown-menu.ui-menu.prnav li > a {
-  padding: 3px 10px !important;
+  padding: 4px 10px !important;
 }
 body > ul.ui-autocomplete a:hover,
 ul.breadcrumb-dropdown a:hover,
@@ -16405,7 +16405,7 @@ body > ul.ui-autocomplete ul.ui-menu li > a,
 ul.breadcrumb-dropdown ul.ui-menu li > a,
 .aos_adminLangSwitcher > ul ul.ui-menu li > a,
 body > ul.pw-dropdown-menu.ui-menu ul.ui-menu li > a {
-  padding: 3px 10px !important;
+  padding: 4px 10px !important;
 }
 body > ul.ui-autocomplete > li:first-child,
 ul.breadcrumb-dropdown > li:first-child,
