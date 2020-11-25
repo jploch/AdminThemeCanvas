@@ -343,15 +343,6 @@ body .InputfieldForm div.cke_editable_inline.cke_focus {
   display: block !important;
 }
 
-.pw-dropdown-menu {
-  //     position: fixed !important;
-  //     top: 73px !important;
-  //     margin-top: 20px!important;
-}
-
-//.ProcessPageEdit .pw-masthead .pw-primary-nav {
-//  display: none !important;
-//}
 
 .pw-primary-nav {
   padding-right: 10px;
@@ -384,10 +375,6 @@ body > ul.pw-dropdown-menu.page {
   width: 200px !important;
 }
 
-ul.pw-dropdown-menu.ui-menu.prnav.page li > a {
-  padding-top: 0.25em !important;
-  padding-bottom: 0.25em !important;
-}
 
 body > ul.pw-dropdown-menu.page ul.ui-menu[style*="left"] ul,
 .pw-dropdown-menu.ui-menu.page .ui-menu ul {
@@ -403,21 +390,24 @@ body > ul.pw-dropdown-menu.page ul.ui-menu[style*="left"] ul,
   width: 200px;
 }
 
-.pw-dropdown-menu.ui-menu.prnav .ui-menu li a {
-  overflow-x: hidden !important;
-  padding-top: 0.25em !important;
-  padding-bottom: 0.25em !important;
-  //  max-width: 190px;
-}
-
-.pw-dropdown-menu.ui-menu.prnav .ui-menu li:last-of-type a {
+.pw ul.pw-dropdown-menu.ui-menu.prnav li:last-of-type > a,
+.pw ul.pw-dropdown-menu.ui-menu.prnav .ui-menu li:last-of-type > a {
   padding-bottom: 8px !important;
 }
 
-.pw-dropdown-menu.ui-menu.prnav .ui-menu .pw-nav-add a,
-.pw-dropdown-menu.ui-menu.prnav .ui-menu li:first-of-type a {
+ul.pw-dropdown-menu.ui-menu.prnav li:first-of-type > a,
+ul.pw-dropdown-menu.ui-menu.prnav .ui-menu li:first-of-type > a {
   padding-top: 8px !important;
-  padding-bottom: 0.25em !important;
+  padding-bottom: 4px !important;
+}
+
+.pw ul.pw-dropdown-menu.ui-menu.prnav .ui-menu .add a,
+.pw ul.pw-dropdown-menu.ui-menu.prnav .ui-menu .pw-nav-add a,
+.pw ul.pw-dropdown-menu.ui-menu.prnav .add a,
+.pw ul.pw-dropdown-menu.ui-menu.prnav .pw-nav-add a {
+  border-bottom: 1px solid #000 !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
 }
 
 .pw-dropdown-menu.ui-menu.prnav .ui-menu .pw-nav-add {
@@ -430,15 +420,6 @@ body > ul.pw-dropdown-menu.page ul.ui-menu[style*="left"] ul,
 
 .page-8- {
   display: none !important;
-}
-
-#prnav-page-3 {
-  //  margin-left: -15px !important;
-}
-
-#pw-masthead .pw-container {
-  //  padding-left: 25px !important;
-  //  padding-right: 25px !important;
 }
 
 // move add-new to top on tree nav 
@@ -454,10 +435,6 @@ body > ul.pw-dropdown-menu.page ul.ui-menu[style*="left"] ul,
   border-top: none !important;
 }
 
-.pw-dropdown-menu.page .pw-nav-add a {
-  border-bottom: 1px solid #000;
-}
-
 .pw-dropdown-menu.page:after {
   left: 17px !important;
 }
@@ -468,18 +445,6 @@ body > ul.pw-dropdown-menu.page ul.ui-menu[style*="left"] ul,
   max-height: none !important;
   overflow-y: unset !important;
 }
-
-
-//improve custom dropdown hover usability
-//.pw-dropdown-menu:before {
-//  display: block !Important;
-//  content: "" !important;
-//  border: none !important;
-//  position: absolute !important;
-//  top: -20px !important;
-//  height: 20px;
-//  width: 100% !important;
-//}
 
 body > ul.page.pw-dropdown-menu.ui-menu[data-at*="right"]:after {
   left: 10% !important;
