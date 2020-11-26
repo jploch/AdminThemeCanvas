@@ -16346,12 +16346,20 @@ body > ul.pw-dropdown-menu.ui-menu[data-at*="right"]:after {
   left: auto !important;
   right: 20px !important;
 }
+body > ul.ui-autocomplete.user-dropdown,
+ul.breadcrumb-dropdown.user-dropdown,
+.aos_adminLangSwitcher > ul.user-dropdown,
+body > ul.pw-dropdown-menu.ui-menu.user-dropdown,
 body > ul.ui-autocomplete.prnav,
 ul.breadcrumb-dropdown.prnav,
 .aos_adminLangSwitcher > ul.prnav,
 body > ul.pw-dropdown-menu.ui-menu.prnav {
   margin-top: -5px;
 }
+body > ul.ui-autocomplete.user-dropdown li,
+ul.breadcrumb-dropdown.user-dropdown li,
+.aos_adminLangSwitcher > ul.user-dropdown li,
+body > ul.pw-dropdown-menu.ui-menu.user-dropdown li,
 body > ul.ui-autocomplete.prnav li,
 ul.breadcrumb-dropdown.prnav li,
 .aos_adminLangSwitcher > ul.prnav li,
@@ -16359,6 +16367,10 @@ body > ul.pw-dropdown-menu.ui-menu.prnav li {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
+body > ul.ui-autocomplete.user-dropdown li > a,
+ul.breadcrumb-dropdown.user-dropdown li > a,
+.aos_adminLangSwitcher > ul.user-dropdown li > a,
+body > ul.pw-dropdown-menu.ui-menu.user-dropdown li > a,
 body > ul.ui-autocomplete.prnav li > a,
 ul.breadcrumb-dropdown.prnav li > a,
 .aos_adminLangSwitcher > ul.prnav li > a,
@@ -17870,7 +17882,7 @@ body > ul.pw-dropdown-menu.page ul.ui-menu[style*="left"] ul,
   width: 200px !important;
   height: 100%;
 }
-.pw-dropdown-menu.ui-menu.prnav .ui-menu li {
+.pw-dropdown-menu.ui-menu .ui-menu li {
   background-color: #262626;
 }
 .pw-dropdown-menu.ui-menu.page .ui-menu li {
@@ -17880,24 +17892,23 @@ body > ul.pw-dropdown-menu.page ul.ui-menu[style*="left"] ul,
   width: 200px;
   overflow: hidden;
 }
-.pw ul.pw-dropdown-menu.ui-menu.prnav li:last-of-type > a,
-.pw ul.pw-dropdown-menu.ui-menu.prnav .ui-menu li:last-of-type > a {
+.pw ul.pw-dropdown-menu.ui-menu li:last-of-type > a,
+.pw ul.pw-dropdown-menu.ui-menu .ui-menu li:last-of-type > a {
   padding-bottom: 12px !important;
 }
-ul.pw-dropdown-menu.ui-menu.prnav li:first-of-type > a,
-ul.pw-dropdown-menu.ui-menu.prnav .ui-menu li:first-of-type > a {
+.pw ul.pw-dropdown-menu.ui-menu li:first-of-type > a,
+.pw ul.pw-dropdown-menu.ui-menu .ui-menu li:first-of-type > a {
   padding-top: 12px !important;
-  padding-bottom: 4px !important;
 }
-.pw ul.pw-dropdown-menu.ui-menu.prnav .ui-menu .add a,
-.pw ul.pw-dropdown-menu.ui-menu.prnav .ui-menu .pw-nav-add a,
-.pw ul.pw-dropdown-menu.ui-menu.prnav .add a,
-.pw ul.pw-dropdown-menu.ui-menu.prnav .pw-nav-add a {
+.pw ul.pw-dropdown-menu.ui-menu .ui-menu .add a,
+.pw ul.pw-dropdown-menu.ui-menu .ui-menu .pw-nav-add a,
+.pw ul.pw-dropdown-menu.ui-menu .add a,
+.pw ul.pw-dropdown-menu.ui-menu .pw-nav-add a {
   border-bottom: 1px solid #000 !important;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
-.pw-dropdown-menu.ui-menu.prnav .pw-nav-add {
+.pw-dropdown-menu.ui-menu .pw-nav-add {
   margin-top: 0 !important;
 }
 .show {
