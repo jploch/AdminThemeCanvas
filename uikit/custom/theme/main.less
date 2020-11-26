@@ -390,14 +390,19 @@ body > ul.pw-dropdown-menu.page ul.ui-menu[style*="left"] ul,
   width: 200px;
 }
 
+.pw-dropdown-menu.ui-menu.page li a {
+  width: 200px;
+  overflow: hidden;
+}
+
 .pw ul.pw-dropdown-menu.ui-menu.prnav li:last-of-type > a,
 .pw ul.pw-dropdown-menu.ui-menu.prnav .ui-menu li:last-of-type > a {
-  padding-bottom: 8px !important;
+  padding-bottom: 12px !important;
 }
 
 ul.pw-dropdown-menu.ui-menu.prnav li:first-of-type > a,
 ul.pw-dropdown-menu.ui-menu.prnav .ui-menu li:first-of-type > a {
-  padding-top: 8px !important;
+  padding-top: 12px !important;
   padding-bottom: 4px !important;
 }
 
@@ -406,11 +411,11 @@ ul.pw-dropdown-menu.ui-menu.prnav .ui-menu li:first-of-type > a {
 .pw ul.pw-dropdown-menu.ui-menu.prnav .add a,
 .pw ul.pw-dropdown-menu.ui-menu.prnav .pw-nav-add a {
   border-bottom: 1px solid #000 !important;
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 
-.pw-dropdown-menu.ui-menu.prnav .ui-menu .pw-nav-add {
+.pw-dropdown-menu.ui-menu.prnav .pw-nav-add {
   margin-top: 0 !important;
 }
 
@@ -422,16 +427,8 @@ ul.pw-dropdown-menu.ui-menu.prnav .ui-menu li:first-of-type > a {
   display: none !important;
 }
 
-// move add-new to top on tree nav 
-.pw-dropdown-menu.page[aria-expanded=true],
-.pw-dropdown-menu.page ul[aria-expanded=true] {
-  display: flex !important;
-  flex-direction: column !important;
-}
-
 .pw-dropdown-menu.page .ui-menu-item.separator.pw-nav-add,
 .pw-dropdown-menu.page .pw-nav-add {
-  order: -1 !important;
   border-top: none !important;
 }
 

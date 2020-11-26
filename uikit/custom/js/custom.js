@@ -38,7 +38,6 @@ $(document).ready(function () {
   });
 
   // spawn page-tree ajax nav
-  //  setTimeout(function () {
   $('.page-8- a').first().trigger('mouseenter');
   $(".pw-dropdown-menu.page .subnav-list").addClass("show");
   $('.pw-dropdown-menu.page .nav-add').remove();
@@ -48,7 +47,7 @@ $(document).ready(function () {
   $('.ProcessPageList #pw-content-head-buttons li a').unwrap();
   $('.ProcessPageList #pw-content-head-buttons ul').hide();
   $('.pw-dropdown-menu.page li').hide();
-  //  }, 300);
+
 
   $(document).on("mouseenter", ".page-3-", function () {
     $('.pw-dropdown-menu.page').append($('.pw-dropdown-menu.page .subnav-list.navJSON li'));
@@ -75,16 +74,15 @@ $(document).ready(function () {
   // END spawn page-tree ajax nav 
 
 
-  // put add-new link on top
-  $(document).on("mouseenter", ".page-3-", function () {
-
-    $(".pw-dropdown-menu.page li").each(function () {
+  // put tree add-new link on top
+  $(document).ajaxComplete(function () {
+    $(".pw-dropdown-menu.page ul li").each(function () {
       if ($(this).hasClass('pw-nav-add')) {
         $(this).parent().prepend($(this));
       }
     });
-
   });
+
 
   // END spawn page-tree ajax nav 
 

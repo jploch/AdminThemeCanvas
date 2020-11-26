@@ -86,7 +86,7 @@ class AdminThemeCanvasConfig extends ModuleConfig
 	{
 		return [
             'nav-icons' => 'nav-show-icons',
-            'hide-title' => true,
+            'hide-title' => false,
             'hide-bookmarks' => true,
             'breadcrump' => 'breadcrumb-show',
 		];
