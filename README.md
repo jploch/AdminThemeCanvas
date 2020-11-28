@@ -1,5 +1,6 @@
 # Admin Theme Canvas
 A minimal admin theme with optimised page editor UI, based on Uikit 3. 
+
 Currently this is close to stable, but users are advised to be cautious and test thoroughly.
 This theme is tested in all major Browsers including IE 11, Edge (>85), Chrome (>85), Firefox (>81), Safari (>11).
 
