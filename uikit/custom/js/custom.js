@@ -1,6 +1,9 @@
 // edit jp
 $(document).ready(function () {
 
+  // title to settings tab
+  $('.hide-title #ProcessPageEditSettings').find('.Inputfields').first().prepend($('.InputfieldPageTitle').first());
+
   if ($('body').hasClass('modal')) {
     return false;
   }
@@ -174,38 +177,6 @@ $(document).ready(function () {
     $('body').removeClass('custom-settings-active');
   });
 
-
-  //  // hack to spawn page dropdown menu
-  //  $('.page-3- a').trigger('mouseenter');
-  //
-  //  $('.pw-dropdown-menu.page').bind('DOMSubtreeModified', function (e) {
-  //    if (e.target.innerHTML.length > 0) {
-  //      console.log('page dropdown added');
-  //      $(this).addClass('pw-dropdown-disabled');
-  //      $(this).removeClass('pw-dropdown-ready');
-  //      $(this).attr('id', 'pw-dropdown-tree');
-  //      $(this).hide();
-  //    }
-  //  });
-
-
-
-  // page dropdown menu show on new pagetree nav link
-  //  $(document).on("mouseenter", ".page-3- a, #pw-dropdown-tree", function () {
-  //    $('#pw-dropdown-tree').removeClass('pw-dropdown-disabled');
-  //    $('#pw-dropdown-tree').addClass('pw-dropdown-ready');
-  //    //    $("#ui-id-3").attr("id", "pw-dropdown-tree");
-  //    var dropdownOffset = $('.pw-tree-nav').offset();
-  //    $('#pw-dropdown-tree').css('margin-left', dropdownOffset.left - 20);
-  //    $('body').addClass('tree-settings-active');
-  //
-  //  });
-  //
-  //  $(document).on("mouseleave", ".page-3- a, #pw-dropdown-tree", function () {
-  //    $('body').removeClass('tree-settings-active');
-  //  });
-
-
   $('.ProcessPageEditSettings').click(function (e) {
     e.preventDefault();
     $('body').addClass('settings-active');
@@ -235,8 +206,6 @@ $(document).ready(function () {
     $('.uk-navbar-container li').removeClass('uk-active');
     //    $('.ProcessPageEditSettings').addClass('uk-active');
   });
-
-  $('.hide-title #ProcessPageEditSettings').find('.Inputfields').first().prepend($('.InputfieldPageTitle').first());
 
   $(document).on('click', '.ProcessPageEditPage, .ProcessPageEditSettings', function (e) {
     e.preventDefault();
