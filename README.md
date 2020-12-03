@@ -1,6 +1,8 @@
 # Admin Theme Canvas
 A minimal admin theme with optimised page editor UI, based on Uikit 3. 
-Currently this is an early beta. It's not recommended to use it for producton yet.
+
+Currently this is close to stable, but users are advised to be cautious and test thoroughly.
+This theme is tested in all major Browsers including IE 11, Edge (>85), Chrome (>85), Firefox (>81), Safari (>11).
 
 ### Features
 
@@ -31,14 +33,22 @@ Currently this is an early beta. It's not recommended to use it for producton ye
 
 Process Wire 3.0.100 or greater
 
+## Installation
+
+1. Go to “Modules > Site > Add New“
+2. Paste the Module Class Name “AdminThemeCanvas“ into the field “Add Module From Directory“
+3. Click “Download And Install“
+4. On the overview, click “Download And Install“ again…
+5. On the following screen, click “Install Now“
+6. Go to your user profile page and change the theme to Admin Theme Canvas
+
 ### Manually
 
-1. Make sure the above requirements are met
-2. Download the theme files from [GitHub](https://github.com/jploch/AdminThemeCanvas) 
-3. Copy all of the files for this module into /site/modules/AdminThemeCanvas/
-4. Go to “Modules > Refresh” in your admin
-5. Click “Install“ on the “AdminThemeCanvas“ Module
-6. Go to your user profile page and change the theme to Admin Theme Canvas
+1. Download the theme files from [GitHub](https://github.com/jploch/AdminThemeCanvas) 
+2. Copy all of the files for this module into /site/modules/AdminThemeCanvas/
+3. Go to “Modules > Refresh” in your admin
+4. Click “Install“ on the “AdminThemeCanvas“ Module
+5. Go to your user profile page and change the theme to Admin Theme Canvas
 
 
 ## Modify yourself
