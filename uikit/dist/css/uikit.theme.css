@@ -17848,7 +17848,7 @@ body .InputfieldForm div.cke_editable_inline.cke_focus {
 .uk-tab > li.uk-active a {
   background: white;
 }
-.ProcessPageEdit .uk-tab > li.uk-active a {
+.ProcessPageEdit .uk-tab.pw-dropdown-custom-settings > li.uk-active a {
   background: transparent;
 }
 .custom-settings-active .pw-dropdown-custom-settings {
@@ -18199,6 +18199,9 @@ table .InputfieldIsOffset,
 }
 #pw-masthead .pw-search-form.search-active {
   width: 200px;
+}
+.InputfieldContent .pw-table-responsive {
+  margin: 0 0 30px 0;
 }
 .uk-navbar-left .pw-page-nav i {
   display: none !important;
