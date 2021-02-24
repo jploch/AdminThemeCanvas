@@ -64,6 +64,24 @@
   border: 1px solid #ccc;
 }
 
+.InputfieldImage,
+.InputfieldFile {
+  background-color: #fbfbfb !important;
+}
+
+.InputfieldStateCollapsed.InputfieldImage,
+.InputfieldStateCollapsed.InputfieldFile {
+  background-color: #ffffff !important;
+}
+
+
+.InputfieldFileEmpty .InputfieldFileListBlank,
+.InputfieldFileEmpty .InputfieldFileUpload,
+.InputfieldFileEmpty .InputfieldImageUpload {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 /*END hide nav js changes while loading*/
 #main .uk-description-list dt {
   text-transform: none !important;
@@ -342,6 +360,13 @@ body .InputfieldForm div.cke_editable_inline.cke_focus {
   display: block !important;
 }
 
+.ProcessPageEdit .InputfieldWrapper {
+  display: none;
+}
+
+.pw-ready .ProcessPageEdit .InputfieldWrapper {
+  display: block;
+}
 
 .pw-primary-nav {
   padding-right: 10px;
@@ -736,6 +761,10 @@ table .InputfieldIsOffset,
 .Inputfields .InputfieldRepeater .InputfieldContent .InputfieldRepeaterItem .InputfieldHeader {
   padding-top: 1em;
   padding-bottom: 1em;
+}
+
+.Inputfields .InputfieldRepeater .InputfieldContent .InputfieldRepeaterItem .Inputfield .InputfieldHeader {
+  padding-bottom: 10px;
 }
 
 .Inputfields .InputfieldRepeater .InputfieldRepeaterItem > .InputfieldHeader.InputfieldRepeaterHeaderInit .InputfieldRepeaterItemControls {
