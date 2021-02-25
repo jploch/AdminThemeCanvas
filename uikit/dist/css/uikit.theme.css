@@ -17868,11 +17868,8 @@ body .InputfieldForm div.cke_editable_inline.cke_focus {
 .custom-settings-active .pw-dropdown-custom-settings {
   display: block !important;
 }
-.ProcessPageEdit .InputfieldWrapper {
+.ProcessPageEdit #Inputfield_seo_tab {
   display: none;
-}
-.pw-ready .ProcessPageEdit .InputfieldWrapper {
-  display: block;
 }
 .pw-primary-nav {
   padding-right: 10px;
