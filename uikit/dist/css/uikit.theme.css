@@ -16548,6 +16548,15 @@ body > ul.ui-autocomplete a:hover .uk-text-muted {
  * the AdminThemeReno look and colors.
  *
  */
+.ui-datepicker table th {
+  color: #fff !important;
+}
+.ui-datepicker table td .ui-state-default {
+  color: #fff !important;
+}
+.ui-datepicker table td .ui-state-default:hover {
+  opacity: 0.5;
+}
 #main {
   /* buttons --------------------------------------------------------------------*/
   /* Form Shadows --------------------------------------------------------------------*/
@@ -16606,8 +16615,12 @@ body > ul.ui-autocomplete a:hover .uk-text-muted {
 #main .ui-datepicker > div {
   border-color: #000;
 }
+#main .ui-datepicker table td {
+  color: #fff;
+}
 #main .ui-datepicker table td .ui-state-default {
   border-color: transparent;
+  color: #fff;
 }
 #main .ui-datepicker table td .ui-state-hover,
 #main .ui-datepicker table td .ui-state-active {

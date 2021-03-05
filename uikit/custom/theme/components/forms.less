@@ -10,7 +10,17 @@
 
 @pill-border-radius: 5px;
 
+.ui-datepicker table th {
+  color: #fff !important;
+}
 
+.ui-datepicker table td .ui-state-default {
+  color: #fff !important;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
 
 
 #main {
@@ -81,20 +91,24 @@
     }
 
     table td {
+
+      color: #fff;
+
       .ui-state-default {
         border-color: transparent;
+        color: #fff;
       }
 
       .ui-state-hover,
       .ui-state-active {
         background: @theme-button-secondary-background, 15%;
-        color: @theme-button-text-color;
+        color: #fff;
       }
 
       .ui-state-highlight,
       .ui-state-highlight:hover {
         background: @theme-dropdown-hover-background;
-        color: @theme-dropdown-color;
+        color: #fff;
       }
     }
 
