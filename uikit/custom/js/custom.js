@@ -139,16 +139,20 @@ $(document).ready(function () {
   // add headline to SEO tab
   $('#Inputfield_seo_tab .InputfieldHeader').first().prepend('<h3>SEO</h3>')
 
+  if ($('body').hasClass('ProcessUser')) {
+    $("#PageEditTabs").css('display', 'flex');
+  }
 
-  $('body').prepend($("#PageEditTabs"));
-  $("#PageEditTabs").removeClass();
-  $("#PageEditTabs li").removeClass();
-  $("#PageEditTabs").attr('');
+  if (!($('body').hasClass('ProcessUser'))) {
+    $('body').prepend($("#PageEditTabs"));
+    $("#PageEditTabs").removeClass();
+    $("#PageEditTabs li").removeClass();
+    $("#PageEditTabs").attr('');
 
-  $("#PageEditTabs").addClass('pw-dropdown-custom-settings prnav pw-dropdown-menu pw-dropdown-disabled ui-menu ui-widget-content ui-widget ui-corner-all');
-  $('#PageEditTabs li').addClass('ui-menu-item');
-  $('#PageEditTabs li a').addClass('ui-corner-all');
-
+    $("#PageEditTabs").addClass('pw-dropdown-custom-settings prnav pw-dropdown-menu pw-dropdown-disabled ui-menu ui-widget-content ui-widget ui-corner-all');
+    $('#PageEditTabs li').addClass('ui-menu-item');
+    $('#PageEditTabs li a').addClass('ui-corner-all');
+  }
 
   //  $('.pw-dropdown-custom-settings').find('li').first().append($('#_ProcessPageEditSettings'));
 
