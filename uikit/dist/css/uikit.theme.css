@@ -17828,9 +17828,10 @@ body .InputfieldForm div.cke_editable_inline.cke_focus {
 .role-nonsuperuser #_ProcessPageEditChildren {
   display: none !important;
 }
-#PageEditTabs {
+.ProcessPageEdit #PageEditTabs {
   display: none;
 }
+.ProcessLanguage #PageEditTabs,
 .modal #PageEditTabs {
   display: flex;
 }

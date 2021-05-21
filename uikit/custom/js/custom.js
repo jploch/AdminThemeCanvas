@@ -140,14 +140,14 @@ $(document).ready(function () {
   $('#Inputfield_seo_tab .InputfieldHeader').first().prepend('<h3>SEO</h3>')
 
 
-  $('body').prepend($("#PageEditTabs"));
-  $("#PageEditTabs").removeClass();
-  $("#PageEditTabs li").removeClass();
-  $("#PageEditTabs").attr('');
+  $('body.ProcessPageEdit').prepend($("#PageEditTabs"));
+  $(".ProcessPageEdit #PageEditTabs").removeClass();
+  $(".ProcessPageEdit #PageEditTabs li").removeClass();
+  $(".ProcessPageEdit #PageEditTabs").attr('');
 
-  $("#PageEditTabs").addClass('pw-dropdown-custom-settings prnav pw-dropdown-menu pw-dropdown-disabled ui-menu ui-widget-content ui-widget ui-corner-all');
-  $('#PageEditTabs li').addClass('ui-menu-item');
-  $('#PageEditTabs li a').addClass('ui-corner-all');
+  $(".ProcessPageEdit #PageEditTabs").addClass('pw-dropdown-custom-settings prnav pw-dropdown-menu pw-dropdown-disabled ui-menu ui-widget-content ui-widget ui-corner-all');
+  $('.ProcessPageEdit #PageEditTabs li').addClass('ui-menu-item');
+  $('.ProcessPageEdit #PageEditTabs li a').addClass('ui-corner-all');
 
 
   //  $('.pw-dropdown-custom-settings').find('li').first().append($('#_ProcessPageEditSettings'));
