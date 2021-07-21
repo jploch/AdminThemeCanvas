@@ -13672,12 +13672,12 @@ body .ui-tooltip {
   margin: 0;
   background: #000;
   border: none;
-  color: #fff !important;
+  color: #fff;
   border-radius: 0;
   line-height: 1.5;
 }
 .ui-dialog .ui-dialog-titlebar .ui-button {
-  color: #fff !important;
+  color: #fff;
   border: none;
   background: none;
   outline: none;
@@ -16548,7 +16548,6 @@ body > ul.ui-autocomplete a:hover .uk-text-muted {
  * the AdminThemeReno look and colors.
  *
  */
-body,
 #main {
   /* buttons --------------------------------------------------------------------*/
   /* Form Shadows --------------------------------------------------------------------*/
@@ -16562,216 +16561,166 @@ body,
   /* checkbox switch toggle */
   /* Label Color */
 }
-body .ui-button,
 #main .ui-button,
-body .uk-button,
 #main .uk-button {
   transition: all 250ms ease 20ms;
   padding: 0 20px !important;
 }
-body .InputfieldFieldset > .InputfieldHeader,
 #main .InputfieldFieldset > .InputfieldHeader {
   font-weight: normal;
   background: transparent;
 }
-body form.Inputfield,
 #main form.Inputfield {
   background: transparent;
 }
-body .Inputfields input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]),
 #main .Inputfields input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]),
-body .Inputfields textarea,
 #main .Inputfields textarea {
   background: #fff;
   border: 1px solid;
   border-color: #ccc;
   -webkit-appearance: none;
 }
-body .Inputfields input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):focus,
 #main .Inputfields input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):focus,
-body .Inputfields textarea:focus,
 #main .Inputfields textarea:focus {
   background: #ffffff;
   border-color: #ccc;
 }
-body .Inputfields select,
 #main .Inputfields select {
   background-color: #fff;
   border: 1px solid;
   border-color: #ccc;
 }
-body .notes,
 #main .notes {
   color: #848484;
   background: transparent;
 }
-body .ui-datepicker,
 #main .ui-datepicker {
   background: transparent;
   box-shadow: none;
 }
-body .ui-datepicker#ui-datepicker-div,
 #main .ui-datepicker#ui-datepicker-div {
   background: #262626;
   box-shadow: none;
   border-radius: 15px;
 }
-body .ui-datepicker > div,
 #main .ui-datepicker > div {
   border-color: #000;
 }
-body .ui-datepicker table td .ui-state-default,
 #main .ui-datepicker table td .ui-state-default {
   border-color: transparent;
 }
-body .ui-datepicker table td .ui-state-hover,
 #main .ui-datepicker table td .ui-state-hover,
-body .ui-datepicker table td .ui-state-active,
 #main .ui-datepicker table td .ui-state-active {
   background: #848484, 15%;
   color: #fff;
 }
-body .ui-datepicker table td .ui-state-highlight,
 #main .ui-datepicker table td .ui-state-highlight,
-body .ui-datepicker table td .ui-state-highlight:hover,
 #main .ui-datepicker table td .ui-state-highlight:hover {
   background: #000000;
   color: #fff;
 }
-body .ui-datepicker button,
 #main .ui-datepicker button {
   border-width: 0px;
 }
-body .ui-datepicker button.ui-datepicker-close,
 #main .ui-datepicker button.ui-datepicker-close {
   background: #000;
   color: #fff;
 }
-body .ui-datepicker button.ui-datepicker-close:hover,
 #main .ui-datepicker button.ui-datepicker-close:hover {
   box-shadow: none;
 }
-body .ui-datepicker button.ui-datepicker-current,
 #main .ui-datepicker button.ui-datepicker-current {
   background: #848484;
   color: #fff;
 }
-body button.ui-button,
 #main button.ui-button {
   position: relative;
   z-index: 1;
 }
-body button.ui-button:hover,
 #main button.ui-button:hover {
   z-index: 1;
   box-shadow: none;
 }
-body button.ui-button:hover + .ui-button,
 #main button.ui-button:hover + .ui-button {
   z-index: 0;
 }
-body .InputfieldSubmit button,
 #main .InputfieldSubmit button,
-body .pw-button-dropdown-wrap button,
 #main .pw-button-dropdown-wrap button {
   box-shadow: none;
 }
-body .InputfieldSubmit:hover button,
 #main .InputfieldSubmit:hover button,
-body .Inputfield_submit_save:hover button,
 #main .Inputfield_submit_save:hover button,
-body .pw-button-dropdown-wrap:hover button,
 #main .pw-button-dropdown-wrap:hover button {
   box-shadow: none;
 }
-body form.WireTab > ul,
 #main form.WireTab > ul {
   box-shadow: none;
 }
-body .WireTabs > .uk-active,
 #main .WireTabs > .uk-active {
   box-shadow: none;
 }
-body .Inputfields .Inputfield:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit),
 #main .Inputfields .Inputfield:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit) {
   box-shadow: none;
 }
-.InputfieldContent > .Inputfields > .Inputfield body .Inputfields .Inputfield:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit),
 .InputfieldContent > .Inputfields > .Inputfield #main .Inputfields .Inputfield:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit) {
   box-shadow: none;
 }
-body .chosen-container-single .chosen-single,
 #main .chosen-container-single .chosen-single {
   background: #fff;
   border-color: #ccc;
 }
-body .chosen-container .chosen-choices,
 #main .chosen-container .chosen-choices {
   border-color: #ccc;
   background: #fff;
   color: #fff;
 }
-body .chosen-container .chosen-choices li.search-choice,
 #main .chosen-container .chosen-choices li.search-choice {
   background: #e6e6e6;
   border-radius: 5px;
   padding: 7px 25px 7px 7px;
   border-color: rgba(0, 0, 0, 0.2);
 }
-body .chosen-container .chosen-choices li.search-choice:hover,
 #main .chosen-container .chosen-choices li.search-choice:hover {
   background: #ffffff;
 }
-body .chosen-container .chosen-choices li.search-choice .search-choice-close,
 #main .chosen-container .chosen-choices li.search-choice .search-choice-close {
   top: 8px;
 }
-body .chosen-container .chosen-choices .search-field input,
 #main .chosen-container .chosen-choices .search-field input {
   padding-top: 6px;
   line-height: 20px;
   height: 32px;
 }
-body .chosen-container .chosen-drop,
 #main .chosen-container .chosen-drop {
   background: #262626;
   box-shadow: none;
   border-color: #ccc;
   border-top-width: 0;
 }
-body .chosen-container .chosen-results,
 #main .chosen-container .chosen-results {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   color: #fff;
 }
-body .chosen-container .chosen-results li.highlighted,
 #main .chosen-container .chosen-results li.highlighted {
   background: #000000;
   color: #fff;
 }
-body .chosen-container-active .chosen-choices,
 #main .chosen-container-active .chosen-choices {
   border-color: #ccc;
   box-shadow: none;
 }
-body .asmListItem,
 #main .asmListItem {
   margin-top: 10px;
 }
-body .asmListItem > i:not(.asmListItemHandle),
 #main .asmListItem > i:not(.asmListItemHandle),
-body .asmListItem > a:not(.asmListItemRemove),
 #main .asmListItem > a:not(.asmListItemRemove),
-body .asmListItem > span:not(.asmListItemLabel),
 #main .asmListItem > span:not(.asmListItemLabel) {
   top: 50% !important;
   transform: translateY(-50%);
   padding-top: 0;
 }
-body .asmListItem.ui-state-hover,
 #main .asmListItem.ui-state-hover,
-body .asmListItem.ui-state-default,
 #main .asmListItem.ui-state-default {
   background: #e6e6e6;
   box-shadow: none;
@@ -16779,52 +16728,38 @@ body .asmListItem.ui-state-default,
   border-radius: 5px;
   padding: 2px;
 }
-body .asmListItem.ui-state-hover a,
 #main .asmListItem.ui-state-hover a,
-body .asmListItem.ui-state-default a,
 #main .asmListItem.ui-state-default a,
-body .asmListItem.ui-state-hover a:hover,
 #main .asmListItem.ui-state-hover a:hover,
-body .asmListItem.ui-state-default a:hover,
 #main .asmListItem.ui-state-default a:hover {
   text-decoration: none;
 }
-body .asmListItem.ui-state-hover,
 #main .asmListItem.ui-state-hover {
   background: #ffffff;
 }
-body .asmListItem .asmListItemRemove i,
 #main .asmListItem .asmListItemRemove i {
   right: 7px;
 }
-body .InputfieldStateRequired > .InputfieldHeader:first-child:after,
 #main .InputfieldStateRequired > .InputfieldHeader:first-child:after {
   color: inherit;
   opacity: 0.7;
 }
-body .InputfieldHeader,
 #main .InputfieldHeader {
   font-weight: normal;
   text-transform: none;
   align-items: center;
 }
-body .InputfieldHeader .fa + span.title,
 #main .InputfieldHeader .fa + span.title {
   margin-left: 0.3em;
 }
-body .ui-slider,
 #main .ui-slider,
-body .ui-slider-horizontal,
 #main .ui-slider-horizontal {
   background: #d1d1d1;
 }
-body .ui-slider .ui-slider-range-min,
 #main .ui-slider .ui-slider-range-min,
-body .ui-slider-horizontal .ui-slider-range-min,
 #main .ui-slider-horizontal .ui-slider-range-min {
   background: #b7b7b7;
 }
-body .ui-slider .ui-state-default.ui-slider-handle,
 #main .ui-slider .ui-state-default.ui-slider-handle {
   background: #848484;
   width: 17px;
@@ -16833,82 +16768,58 @@ body .ui-slider .ui-state-default.ui-slider-handle,
   box-shadow: none;
   cursor: pointer;
 }
-body .ui-slider .ui-state-default.ui-slider-handle:hover,
 #main .ui-slider .ui-state-default.ui-slider-handle:hover {
   background: #000;
   box-shadow: none;
 }
-body .gridImage__overflow .focusArea .focusCircle,
 #main .gridImage__overflow .focusArea .focusCircle,
-body .InputfieldImageEdit .focusArea .focusCircle,
 #main .InputfieldImageEdit .focusArea .focusCircle {
   border-color: #000;
   background: radial-gradient(ellipse at center, #000 0%, #000 14%, rgba(255, 255, 255, 0.5) 15%, rgba(255, 255, 255, 0.5) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=1);
 }
-body .gridImage__edit:hover,
 #main .gridImage__edit:hover {
   text-decoration: none;
   text-transform: none;
 }
-body .gridImage.gridImageEditing .gridImage__inner,
 #main .gridImage.gridImageEditing .gridImage__inner {
   background: rgba(0, 0, 0, 0.4);
 }
-body .gridImage .gridImage__inner:hover,
 #main .gridImage .gridImage__inner:hover {
   background: rgba(0, 0, 0, 0.4);
 }
-body .ui-dialog .ui-dialog-titlebar .ui-button,
 #main .ui-dialog .ui-dialog-titlebar .ui-button,
-body .ui-dialog .ui-dialog-titlebar,
 #main .ui-dialog .ui-dialog-titlebar {
   font-size: 18px;
   color: #000;
 }
-body .ui-dialog .ui-dialog-titlebar .ui-button:hover,
 #main .ui-dialog .ui-dialog-titlebar .ui-button:hover,
-body .ui-dialog .ui-dialog-titlebar:hover,
 #main .ui-dialog .ui-dialog-titlebar:hover {
   box-shadow: none;
 }
-body .uk-checkbox:checked,
 #main .uk-checkbox:checked,
-body .uk-checkbox:indeterminate,
 #main .uk-checkbox:indeterminate,
-body .uk-radio:checked,
 #main .uk-radio:checked {
   background-color: #0d0d0d;
   color: #fff;
   border-color: #000000;
 }
-body .uk-radio:checked,
 #main .uk-radio:checked {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
 }
-body .uk-checkbox:checked,
 #main .uk-checkbox:checked {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
-body .InputfieldCheckboxes,
 #main .InputfieldCheckboxes,
-body .LanguageSupport label.checkbox.detail,
 #main .LanguageSupport label.checkbox.detail,
-body .uk-form-controls-text label:only-of-type,
 #main .uk-form-controls-text label:only-of-type {
   cursor: pointer;
 }
-body .InputfieldCheckboxes input[type=checkbox],
 #main .InputfieldCheckboxes input[type=checkbox],
-body .LanguageSupport label.checkbox.detail input[type=checkbox],
 #main .LanguageSupport label.checkbox.detail input[type=checkbox],
-body .uk-form-controls-text label:only-of-type input[type=checkbox],
 #main .uk-form-controls-text label:only-of-type input[type=checkbox],
-body .InputfieldCheckboxes input.uk-checkbox,
 #main .InputfieldCheckboxes input.uk-checkbox,
-body .LanguageSupport label.checkbox.detail input.uk-checkbox,
 #main .LanguageSupport label.checkbox.detail input.uk-checkbox,
-body .uk-form-controls-text label:only-of-type input.uk-checkbox,
 #main .uk-form-controls-text label:only-of-type input.uk-checkbox {
   font-size: .65rem;
   margin-top: 0;
@@ -16926,17 +16837,11 @@ body .uk-form-controls-text label:only-of-type input.uk-checkbox,
   vertical-align: middle;
   top: 0;
 }
-body .InputfieldCheckboxes input[type=checkbox]:after,
 #main .InputfieldCheckboxes input[type=checkbox]:after,
-body .LanguageSupport label.checkbox.detail input[type=checkbox]:after,
 #main .LanguageSupport label.checkbox.detail input[type=checkbox]:after,
-body .uk-form-controls-text label:only-of-type input[type=checkbox]:after,
 #main .uk-form-controls-text label:only-of-type input[type=checkbox]:after,
-body .InputfieldCheckboxes input.uk-checkbox:after,
 #main .InputfieldCheckboxes input.uk-checkbox:after,
-body .LanguageSupport label.checkbox.detail input.uk-checkbox:after,
 #main .LanguageSupport label.checkbox.detail input.uk-checkbox:after,
-body .uk-form-controls-text label:only-of-type input.uk-checkbox:after,
 #main .uk-form-controls-text label:only-of-type input.uk-checkbox:after {
   content: "";
   position: absolute;
@@ -16949,94 +16854,61 @@ body .uk-form-controls-text label:only-of-type input.uk-checkbox:after,
   transition: all 250ms ease 20ms;
   box-shadow: none;
 }
-body .InputfieldCheckboxes input[type=checkbox]:focus,
 #main .InputfieldCheckboxes input[type=checkbox]:focus,
-body .LanguageSupport label.checkbox.detail input[type=checkbox]:focus,
 #main .LanguageSupport label.checkbox.detail input[type=checkbox]:focus,
-body .uk-form-controls-text label:only-of-type input[type=checkbox]:focus,
 #main .uk-form-controls-text label:only-of-type input[type=checkbox]:focus,
-body .InputfieldCheckboxes input.uk-checkbox:focus,
 #main .InputfieldCheckboxes input.uk-checkbox:focus,
-body .LanguageSupport label.checkbox.detail input.uk-checkbox:focus,
 #main .LanguageSupport label.checkbox.detail input.uk-checkbox:focus,
-body .uk-form-controls-text label:only-of-type input.uk-checkbox:focus,
 #main .uk-form-controls-text label:only-of-type input.uk-checkbox:focus,
-body .InputfieldCheckboxes input[type=checkbox]:hover,
 #main .InputfieldCheckboxes input[type=checkbox]:hover,
-body .LanguageSupport label.checkbox.detail input[type=checkbox]:hover,
 #main .LanguageSupport label.checkbox.detail input[type=checkbox]:hover,
-body .uk-form-controls-text label:only-of-type input[type=checkbox]:hover,
 #main .uk-form-controls-text label:only-of-type input[type=checkbox]:hover,
-body .InputfieldCheckboxes input.uk-checkbox:hover,
 #main .InputfieldCheckboxes input.uk-checkbox:hover,
-body .LanguageSupport label.checkbox.detail input.uk-checkbox:hover,
 #main .LanguageSupport label.checkbox.detail input.uk-checkbox:hover,
-body .uk-form-controls-text label:only-of-type input.uk-checkbox:hover,
 #main .uk-form-controls-text label:only-of-type input.uk-checkbox:hover {
   border-color: #D6D6D6;
   box-shadow: none;
 }
-body .InputfieldCheckboxes input[type=checkbox]:checked,
 #main .InputfieldCheckboxes input[type=checkbox]:checked,
-body .LanguageSupport label.checkbox.detail input[type=checkbox]:checked,
 #main .LanguageSupport label.checkbox.detail input[type=checkbox]:checked,
-body .uk-form-controls-text label:only-of-type input[type=checkbox]:checked,
 #main .uk-form-controls-text label:only-of-type input[type=checkbox]:checked,
-body .InputfieldCheckboxes input.uk-checkbox:checked,
 #main .InputfieldCheckboxes input.uk-checkbox:checked,
-body .LanguageSupport label.checkbox.detail input.uk-checkbox:checked,
 #main .LanguageSupport label.checkbox.detail input.uk-checkbox:checked,
-body .uk-form-controls-text label:only-of-type input.uk-checkbox:checked,
 #main .uk-form-controls-text label:only-of-type input.uk-checkbox:checked {
   background-color: transparent;
   box-shadow: inset 5em 0 0 0 #333333;
   border-color: #000;
 }
-body .InputfieldCheckboxes input[type=checkbox]:checked:after,
 #main .InputfieldCheckboxes input[type=checkbox]:checked:after,
-body .LanguageSupport label.checkbox.detail input[type=checkbox]:checked:after,
 #main .LanguageSupport label.checkbox.detail input[type=checkbox]:checked:after,
-body .uk-form-controls-text label:only-of-type input[type=checkbox]:checked:after,
 #main .uk-form-controls-text label:only-of-type input[type=checkbox]:checked:after,
-body .InputfieldCheckboxes input.uk-checkbox:checked:after,
 #main .InputfieldCheckboxes input.uk-checkbox:checked:after,
-body .LanguageSupport label.checkbox.detail input.uk-checkbox:checked:after,
 #main .LanguageSupport label.checkbox.detail input.uk-checkbox:checked:after,
-body .uk-form-controls-text label:only-of-type input.uk-checkbox:checked:after,
 #main .uk-form-controls-text label:only-of-type input.uk-checkbox:checked:after {
   left: 1.85em;
   box-shadow: none;
 }
-body .InputfieldCheckboxes label,
 #main .InputfieldCheckboxes label,
-body .InputfieldCheckbox label,
 #main .InputfieldCheckbox label {
   white-space: inherit;
 }
-body .InputfieldCheckboxes .InputfieldCheckboxesStacked li,
 #main .InputfieldCheckboxes .InputfieldCheckboxesStacked li,
-body .InputfieldCheckbox .InputfieldCheckboxesStacked li,
 #main .InputfieldCheckbox .InputfieldCheckboxesStacked li,
-body .InputfieldCheckboxes .InputfieldCheckboxesColumns li,
 #main .InputfieldCheckboxes .InputfieldCheckboxesColumns li,
-body .InputfieldCheckbox .InputfieldCheckboxesColumns li,
 #main .InputfieldCheckbox .InputfieldCheckboxesColumns li {
   padding-bottom: 3px;
 }
-body label:only-of-type input.uk-checkbox + span,
 #main label:only-of-type input.uk-checkbox + span {
   align-items: center;
   line-height: 1.1;
   margin-bottom: 0;
   vertical-align: middle;
 }
-body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden,
 #main .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden {
   display: block;
   padding-bottom: 0.5em;
   text-transform: none;
 }
-body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldContent,
 #main .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldContent {
   padding-top: 0;
 }
@@ -17778,9 +17650,7 @@ html.highlightRows .PageListItem:hover {
 }
 .pw .ui-dialog {
   z-index: 999999;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
+  position: fixed !important;
 }
 .hide-title .InputfieldPageTitle {
   display: none !important;
