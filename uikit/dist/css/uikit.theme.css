@@ -10,7 +10,7 @@
  */
 html {
   /* 1 */
-  font-family: "-apple-system, BlinkMacSystemFont", "Helvetica Neue", "Arial", arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", arial, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
@@ -242,7 +242,7 @@ h5,
 h6,
 .uk-h6 {
   margin: 0 0 20px 0;
-  font-family: "-apple-system, BlinkMacSystemFont", "Helvetica Neue", "Arial", arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", arial, sans-serif;
   font-weight: normal;
   color: #333;
   text-transform: none;
@@ -3899,7 +3899,7 @@ ul.uk-nav-sub {
   padding: 0 15px;
   /* 3 */
   font-size: 18px;
-  font-family: "-apple-system, BlinkMacSystemFont", "Helvetica Neue", "Arial", arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", arial, sans-serif;
   /* 4 */
   text-decoration: none;
 }
@@ -7908,7 +7908,7 @@ iframe.uk-cover {
  */
 .uk-logo {
   font-size: 1.5rem;
-  font-family: "-apple-system, BlinkMacSystemFont", "Helvetica Neue", "Arial", arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", arial, sans-serif;
   color: #000;
   /* 1 */
   text-decoration: none;
@@ -16194,7 +16194,7 @@ html.aos .aos_hasTooltip .aos_EditField:hover:before {
  *
  */
 .pw {
-  font-family: "-apple-system, BlinkMacSystemFont", "Helvetica Neue", "Arial", arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", arial, sans-serif;
   letter-spacing: 0.03em;
 }
 .pw a:hover {
@@ -17354,7 +17354,7 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
 }
 #main .help-doc h1,
 #main .cbp-ntaccordion h3.cbp-nttrigger {
-  font-family: "-apple-system, BlinkMacSystemFont", "Helvetica Neue", "Arial", arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", arial, sans-serif;
   font-size: reset;
   color: #000;
   padding: reset;
