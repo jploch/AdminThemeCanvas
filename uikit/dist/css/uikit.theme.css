@@ -17086,9 +17086,6 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
   justify-content: center;
   /* login page form */
 }
-.pw .pw-login-links {
-  margin-bottom: 0 !important;
-}
 .pw body.ProcessLogin {
   background: #1a1a1a;
   box-shadow: none;
@@ -17101,6 +17098,19 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
   /*#pw-masthead-mobile .pw-logo {
             filter: grayscale(100%) brightness(200%);
         }*/
+}
+.pw body.ProcessLogin .pw-login-links {
+  margin-bottom: 0 !important;
+}
+.pw body.ProcessLogin #ProcessForgotPassword {
+  color: white;
+}
+.pw body.ProcessLogin #ProcessForgotPassword input,
+.pw body.ProcessLogin #ProcessForgotPassword label,
+.pw body.ProcessLogin #ProcessForgotPassword p,
+.pw body.ProcessLogin #ProcessForgotPassword a,
+.pw body.ProcessLogin #ProcessForgotPassword i {
+  color: white;
 }
 @media (min-width: 1000px) {
   .pw body.ProcessLogin {
