@@ -66,6 +66,7 @@ This is how you modify the themes less files on your own: Run “yarn watch“ t
 
 	# or with npm:
 	$ npm run watch
+    $ npm run compile
 
 Now you can modify the less file(s) under “AdminThemeCanvas/uikit/custom/…“.
 The primary theme file is “AdminThemeCanvas/uikit/custom/theme/main.less“.

@@ -17086,8 +17086,11 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
   justify-content: center;
   /* login page form */
 }
+.pw .pw-login-links {
+  margin-bottom: 0 !important;
+}
 .pw body.ProcessLogin {
-  background: rgba(0, 0, 0, 0.02);
+  background: #1a1a1a;
   box-shadow: none;
   padding: 20px;
   display: flex;
@@ -17139,6 +17142,7 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
 .pw body.ProcessLogin a,
 .pw body.ProcessLogin input,
 .pw body.ProcessLogin button {
+  color: #fff;
   transition: all 250ms ease 20ms;
 }
 .pw body.ProcessLogin #pw-masthead-mobile {
@@ -17253,9 +17257,6 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
 }
 .pw body.ProcessLogin #pw-content-body > div a:hover {
   color: #848484;
-}
-.pw body.ProcessLogin #pw-content-body p:last-child {
-  display: none;
 }
 /**************************************************************
  * base theme
@@ -17769,6 +17770,15 @@ html.highlightRows .PageListItem:hover {
 }
 .pw-user-nav {
   margin-right: -15px !important;
+}
+.ui-tooltip {
+  background-color: black !important;
+  color: white !important;
+}
+.ui-tooltip a,
+.ui-tooltip span,
+.ui-tooltip p {
+  color: white !important;
 }
 .nav-show-icons #pw-masthead .pw-nav-icon {
   margin-right: 0 !important;
@@ -18355,7 +18365,7 @@ table .InputfieldIsOffset,
   /* login page form */
 }
 .pw body.ProcessLogin {
-  background: #0d0d0d;
+  background: #1a1a1a;
 }
 .pw body.ProcessLogin #pw-masthead-mobile .pw-logo {
   filter: grayscale(100%) brightness(200%);

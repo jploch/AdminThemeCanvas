@@ -1,45 +1,45 @@
 .pw {
 
-     /* login page form */
-     body.ProcessLogin {
-          background: lighten(@theme-primary-color, 5%);
+    /* login page form */
+    body.ProcessLogin {
+        background: lighten(@theme-primary-color, 10%);
 
-          #pw-masthead-mobile .pw-logo {
-               filter: grayscale(100%) brightness(200%);
-               fill: #fff;
-          }
+        #pw-masthead-mobile .pw-logo {
+            filter: grayscale(100%) brightness(200%);
+            fill: #fff;
+        }
 
-          svg path {
-               fill: #fff !important;
-          }
+        svg path {
+            fill: #fff !important;
+        }
 
-          > #main {
-               #content {
-                    form {
-                         .Inputfield {
+        > #main {
+            #content {
+                form {
+                    .Inputfield {
 
-                              input {
-                                   color: darken(@theme-text-color-inverse, 10%);
-                                   border-color: lighten(@theme-primary-color, 25%);
+                        input {
+                            color: darken(@theme-text-color-inverse, 10%);
+                            border-color: lighten(@theme-primary-color, 25%);
 
-                                   &::placeholder {
-                                        color: darken(@theme-text-color-inverse, 15%);
-                                   }
+                            &::placeholder {
+                                color: darken(@theme-text-color-inverse, 15%);
+                            }
 
-                                   &:hover,
-                                   &:focus {
-                                        color: darken(@theme-text-color-inverse, 5%);
-                                        border-color: lighten(@theme-primary-color, 30%);
-                                   }
+                            &:hover,
+                            &:focus {
+                                color: darken(@theme-text-color-inverse, 5%);
+                                border-color: lighten(@theme-primary-color, 30%);
+                            }
 
-                                   &:focus {
-                                        color: @theme-text-color-inverse;
-                                        border-color: lighten(@theme-primary-color, 40%);
-                                   }
-                              }
-                         }
+                            &:focus {
+                                color: @theme-text-color-inverse;
+                                border-color: lighten(@theme-primary-color, 40%);
+                            }
+                        }
                     }
-               }
-          }
-     }
+                }
+            }
+        }
+    }
 }

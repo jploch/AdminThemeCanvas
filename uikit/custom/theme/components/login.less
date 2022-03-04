@@ -9,239 +9,244 @@
 @import "../variables.less";
 
 .pw {
-  min-width: 100%;
-  min-height: 100vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* login page form */
-  body.ProcessLogin {
-
-    background: fade(@theme-primary-color, 2%);
-    box-shadow: none;
-    padding: 20px;
+    min-width: 100%;
+    min-height: 100vh;
 
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-content: center;
-    flex-direction: column;
 
-    @media (min-width: 1000px) {
-      border-radius: 15px;
-
-      padding: 40px;
-
-      min-width: 20vw;
-      min-height: 30vh;
-
-      max-width: 490px;
-      max-height: 900px;
+    .pw-login-links {
+        margin-bottom: 0 !important;
     }
 
-    position: static;
+    /* login page form */
+    body.ProcessLogin {
 
-    #pw-mastheads {
-      position: static;
+        background: #1a1a1a;
+        box-shadow: none;
+        padding: 20px;
 
-      .pw-notices {
-        margin-bottom: 2em;
-        position: relative;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
 
-        // floating on large screens
         @media (min-width: 1000px) {
-          position: absolute;
-          top: 0;
-          right: 0;
+            border-radius: 15px;
+
+            padding: 40px;
+
+            min-width: 20vw;
+            min-height: 30vh;
+
+            max-width: 490px;
+            max-height: 900px;
         }
 
-        > li {
-          border-bottom-width: 0;
-          border-radius: 4px;
-          padding: 0.8em !important;
+        position: static;
 
-          @media (min-width: 1000px) {
-            opacity: 0.9;
+        #pw-mastheads {
+            position: static;
 
-            &:hover {
-              opacity: 1;
+            .pw-notices {
+                margin-bottom: 2em;
+                position: relative;
+
+                // floating on large screens
+                @media (min-width: 1000px) {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+
+                > li {
+                    border-bottom-width: 0;
+                    border-radius: 4px;
+                    padding: 0.8em !important;
+
+                    @media (min-width: 1000px) {
+                        opacity: 0.9;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
             }
-          }
         }
-      }
-    }
 
 
-    a,
-    input,
-    button {
-      transition: all 250ms ease 20ms;
-    }
+        a,
+        input,
+        button {
+            color: #fff;
+            transition: all 250ms ease 20ms;
+        }
 
-    #pw-masthead-mobile {
-      background-color: transparent;
-      margin-bottom: 2em;
-      box-shadow: none;
+        #pw-masthead-mobile {
+            background-color: transparent;
+            margin-bottom: 2em;
+            box-shadow: none;
 
-      .pw-logo {
-        max-height: 60px; //filter: grayscale(100%) brightness(400%);
-      }
-    }
+            .pw-logo {
+                max-height: 60px; //filter: grayscale(100%) brightness(400%);
+            }
+        }
 
-    /*#pw-masthead-mobile .pw-logo {
+        /*#pw-masthead-mobile .pw-logo {
             filter: grayscale(100%) brightness(200%);
         }*/
 
-    > #main {
-      margin-bottom: 0 !important;
+        > #main {
+            margin-bottom: 0 !important;
 
-      #content {
-        form {
+            #content {
+                form {
 
-          &#ProcessLoginForm {
-            label {
-              display: none;
+                    &#ProcessLoginForm {
+                        label {
+                            display: none;
+                        }
+                    }
+
+                    width: auto;
+
+                    .Inputfields {
+                        display: flex;
+                    }
+
+                    .InputfieldHeader {
+                        font-size: 1.1em;
+                    }
+
+                    .InputfieldContent {
+                        padding: 0 0 1em;
+                    }
+
+                    .Inputfield {
+                        border-width: none;
+                        outline: none;
+
+                        box-shadow: none !important;
+                        background: transparent;
+                        width: 100% !important;
+
+                        input {
+                            outline: none;
+
+                            border-radius: 4px;
+                            color: fade(@theme-primary-color, 70%);
+                            box-shadow: @pw-box-shadow-medium;
+
+                            border-color: lighten(@theme-primary-color, 20%);
+                            background: fade(@theme-primary-color, 15%);
+                            font-size: 1.25rem;
+                            text-align: left;
+
+                            max-width: 500px;
+
+                            &::placeholder {
+                                color: fade(@theme-primary-color, 60%);
+                                text-transform: uppercase;
+                            }
+
+                            &:hover,
+                            &:focus {
+                                color: fade(@theme-primary-color, 80%);
+                                background: fade(@theme-primary-color, 20%);
+                                box-shadow: @pw-box-shadow-small;
+                                border-color: lighten(@theme-primary-color, 15%);
+                            }
+
+                            &:focus {
+                                color: @theme-primary-color;
+                                border-color: lighten(@theme-primary-color, 10%);
+                            }
+                        }
+
+                        button {
+                            outline: none;
+
+                            color: @theme-button-text-color;
+                            background-color: @theme-button-background;
+
+                            &:focus,
+                            &:hover {
+                                color: @theme-text-color-inverse;
+                                background-color: @theme-button-hover-background;
+                            }
+                        }
+
+                        > div,
+                        > label {
+                            background: transparent;
+                        }
+
+                        .ui-button {
+                            margin-top: 1em;
+                            font-size: 1.25rem
+                        }
+                    }
+
+                    &#socialsLoginForm {
+                        margin: 20px 0 0;
+
+                        ul.Inputfields {
+                            margin-top: 1em;
+                            justify-content: center;
+                            width: 100%;
+
+                            > li {
+                                padding: 0;
+                                flex-basis: 20%;
+                            }
+
+                            .ui-button {
+                                font-size: 1rem;
+                                margin: 1em 0.5em 0;
+                                padding: 0.25em 1em;
+                                line-height: 1.75em;
+                                color: darken(@theme-button-text-color, 5%);
+                            }
+
+                            .InputfieldButton,
+                            .InputfieldSubmit {
+                                display: block;
+                            }
+                        }
+                    }
+                }
             }
-          }
 
-          width: auto;
-
-          .Inputfields {
-            display: flex;
-          }
-
-          .InputfieldHeader {
-            font-size: 1.1em;
-          }
-
-          .InputfieldContent {
-            padding: 0 0 1em;
-          }
-
-          .Inputfield {
-            border-width: none;
-            outline: none;
-
-            box-shadow: none !important;
-            background: transparent;
-            width: 100% !important;
-
-            input {
-              outline: none;
-
-              border-radius: 4px;
-              color: fade(@theme-primary-color, 70%);
-              box-shadow: @pw-box-shadow-medium;
-
-              border-color: lighten(@theme-primary-color, 20%);
-              background: fade(@theme-primary-color, 15%);
-              font-size: 1.25rem;
-              text-align: left;
-
-              max-width: 500px;
-
-              &::placeholder {
-                color: fade(@theme-primary-color, 60%);
-                text-transform: uppercase;
-              }
-
-              &:hover,
-              &:focus {
-                color: fade(@theme-primary-color, 80%);
-                background: fade(@theme-primary-color, 20%);
-                box-shadow: @pw-box-shadow-small;
-                border-color: lighten(@theme-primary-color, 15%);
-              }
-
-              &:focus {
-                color: @theme-primary-color;
-                border-color: lighten(@theme-primary-color, 10%);
-              }
-            }
-
-            button {
-              outline: none;
-
-              color: @theme-button-text-color;
-              background-color: @theme-button-background;
-
-              &:focus,
-              &:hover {
-                color: @theme-text-color-inverse;
-                background-color: @theme-button-hover-background;
-              }
-            }
-
-            > div,
-            > label {
-              background: transparent;
-            }
-
-            .ui-button {
-              margin-top: 1em;
-              font-size: 1.25rem
-            }
-          }
-
-          &#socialsLoginForm {
-            margin: 20px 0 0;
-
-            ul.Inputfields {
-              margin-top: 1em;
-              justify-content: center;
-              width: 100%;
-
-              > li {
-                padding: 0;
-                flex-basis: 20%;
-              }
-
-              .ui-button {
-                font-size: 1rem;
-                margin: 1em 0.5em 0;
-                padding: 0.25em 1em;
-                line-height: 1.75em;
-                color: darken(@theme-button-text-color, 5%);
-              }
-
-              .InputfieldButton,
-              .InputfieldSubmit {
-                display: block;
-              }
-            }
-          }
         }
-      }
+
+
+
+        #pw-content-body {
+
+            // password links
+            > div {
+                display: inline-block;
+                margin: 0 0.75em;
+                padding-top: 0.75em;
+
+                a {
+                    font-size: 0.9em;
+                    text-transform: uppercase;
+
+                    color: @theme-muted-text-color;
+
+                    &:hover {
+                        color: @theme-muted-text-color-alternate;
+                    }
+                }
+            }
+
+            //      p:last-child {
+            //        display: none;
+            //      }
+        }
 
     }
-
-
-
-    #pw-content-body {
-
-      // password links
-      > div {
-        display: inline-block;
-        margin: 0 0.75em;
-        padding-top: 0.75em;
-
-        a {
-          font-size: 0.9em;
-          text-transform: uppercase;
-
-          color: @theme-muted-text-color;
-
-          &:hover {
-            color: @theme-muted-text-color-alternate;
-          }
-        }
-      }
-
-      p:last-child {
-        display: none;
-      }
-    }
-
-  }
 }
