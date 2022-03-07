@@ -17193,7 +17193,7 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.7);
   box-shadow: none;
-  border-color: #333333;
+  border-color: #4d4d4d;
   background: rgba(0, 0, 0, 0.15);
   font-size: 1.25rem;
   text-align: left;
@@ -17208,11 +17208,11 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
   color: rgba(0, 0, 0, 0.8);
   background: rgba(0, 0, 0, 0.2);
   box-shadow: none;
-  border-color: #262626;
+  border-color: #808080;
 }
 .pw body.ProcessLogin > #main #content form .Inputfield input:focus {
   color: #000;
-  border-color: #1a1a1a;
+  border-color: #808080;
 }
 .pw body.ProcessLogin > #main #content form .Inputfield button {
   outline: none;
@@ -18386,7 +18386,7 @@ table .InputfieldIsOffset,
 }
 .pw body.ProcessLogin > #main #content form .Inputfield input {
   color: #e6e6e6;
-  border-color: #404040;
+  border-color: #4d4d4d;
 }
 .pw body.ProcessLogin > #main #content form .Inputfield input::placeholder {
   color: #d9d9d9;
@@ -18394,10 +18394,10 @@ table .InputfieldIsOffset,
 .pw body.ProcessLogin > #main #content form .Inputfield input:hover,
 .pw body.ProcessLogin > #main #content form .Inputfield input:focus {
   color: #f2f2f2;
-  border-color: #4d4d4d;
+  border-color: #808080;
 }
 .pw body.ProcessLogin > #main #content form .Inputfield input:focus {
   color: #fff;
-  border-color: #666666;
+  border-color: #808080;
 }
 /* Overrides… */
