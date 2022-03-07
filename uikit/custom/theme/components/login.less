@@ -113,6 +113,8 @@
 
         > #main {
             margin-bottom: 0 !important;
+            padding: 0 !important;
+            max-width: 390px !important;
 
             #content {
                 form {
@@ -147,6 +149,7 @@
 
                         input {
                             outline: none;
+                            width: 100%;
 
                             border-radius: 4px;
                             color: fade(@theme-primary-color, 70%);
@@ -157,7 +160,7 @@
                             font-size: 1.25rem;
                             text-align: left;
 
-                            max-width: 500px;
+                            max-width: 390px;
 
                             &::placeholder {
                                 color: fade(@theme-primary-color, 60%);
@@ -194,6 +197,7 @@
                         > div,
                         > label {
                             background: transparent;
+                            padding-left: 0;
                         }
 
                         .ui-button {

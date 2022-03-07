@@ -17165,6 +17165,8 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
 }
 .pw body.ProcessLogin > #main {
   margin-bottom: 0 !important;
+  padding: 0 !important;
+  max-width: 390px !important;
 }
 .pw body.ProcessLogin > #main #content form {
   width: auto;
@@ -17190,6 +17192,7 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
 }
 .pw body.ProcessLogin > #main #content form .Inputfield input {
   outline: none;
+  width: 100%;
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.7);
   box-shadow: none;
@@ -17197,7 +17200,7 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
   background: rgba(0, 0, 0, 0.15);
   font-size: 1.25rem;
   text-align: left;
-  max-width: 500px;
+  max-width: 390px;
 }
 .pw body.ProcessLogin > #main #content form .Inputfield input::placeholder {
   color: rgba(0, 0, 0, 0.6);
@@ -17227,6 +17230,7 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
 .pw body.ProcessLogin > #main #content form .Inputfield > div,
 .pw body.ProcessLogin > #main #content form .Inputfield > label {
   background: transparent;
+  padding-left: 0;
 }
 .pw body.ProcessLogin > #main #content form .Inputfield .ui-button {
   margin-top: 1em;
