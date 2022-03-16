@@ -1,6 +1,10 @@
 // edit jp
 $(document).ready(function () {
 
+  //add placeholder to login inputs
+  $('#login_name').attr('placeholder', $('#wrap_login_name label').text() );
+  $('#login_pass').attr('placeholder', $('#wrap_login_pass label').text() );
+
   // title to settings tab
   $('.hide-title #ProcessPageEditSettings').find('.Inputfields').first().prepend($('.InputfieldPageTitle').first());
 

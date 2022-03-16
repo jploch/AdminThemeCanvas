@@ -21,6 +21,15 @@
 
         .pw-login-links {
             margin-bottom: 0 !important;
+
+            a{
+                font-size: 14px !important;
+                color: lighten(@theme-primary-color, 45%)!important;
+
+                &:hover {
+                    color: lighten(@theme-primary-color, 100%)!important;
+                }
+            }
         }
 
         #ProcessForgotPassword {
@@ -53,7 +62,7 @@
             min-width: 20vw;
             min-height: 30vh;
 
-            max-width: 490px;
+            max-width: 380px;
             max-height: 900px;
         }
 
@@ -163,8 +172,10 @@
                             max-width: 390px;
 
                             &::placeholder {
-                                color: fade(@theme-primary-color, 60%);
-                                text-transform: uppercase;
+                                color: lighten(@theme-primary-color, 40%)!important;
+                                font-size: 1.1rem;
+                                font-weight: normal;
+                                // text-transform: uppercase;
                             }
 
                             &:hover,

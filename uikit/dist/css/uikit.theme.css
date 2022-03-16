@@ -17102,6 +17102,13 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
 .pw body.ProcessLogin .pw-login-links {
   margin-bottom: 0 !important;
 }
+.pw body.ProcessLogin .pw-login-links a {
+  font-size: 14px !important;
+  color: #737373 !important;
+}
+.pw body.ProcessLogin .pw-login-links a:hover {
+  color: #ffffff !important;
+}
 .pw body.ProcessLogin #ProcessForgotPassword {
   color: white;
 }
@@ -17118,7 +17125,7 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
     padding: 40px;
     min-width: 20vw;
     min-height: 30vh;
-    max-width: 490px;
+    max-width: 380px;
     max-height: 900px;
   }
 }
@@ -17203,8 +17210,9 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
   max-width: 390px;
 }
 .pw body.ProcessLogin > #main #content form .Inputfield input::placeholder {
-  color: rgba(0, 0, 0, 0.6);
-  text-transform: uppercase;
+  color: #666666 !important;
+  font-size: 1.1rem;
+  font-weight: normal;
 }
 .pw body.ProcessLogin > #main #content form .Inputfield input:hover,
 .pw body.ProcessLogin > #main #content form .Inputfield input:focus {
