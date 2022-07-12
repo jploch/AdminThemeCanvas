@@ -13885,14 +13885,14 @@ a.tooltip:hover {
   border-radius: 3px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   background: #000;
-  color: #000;
+  color: #fff;
 }
 .ui-datepicker table {
   table-layout: fixed;
   margin: 0 0 15px 0;
 }
 .ui-datepicker table th {
-  color: #000;
+  color: #fff;
   font-weight: normal;
 }
 .ui-datepicker table td {
@@ -13908,24 +13908,24 @@ a.tooltip:hover {
   border: 1px solid #000;
   border-radius: 3px;
   line-height: 1.2em;
-  color: #000;
+  color: #fff;
 }
 .ui-datepicker table td .ui-state-default:hover {
   background: #141414;
   border: 1px solid #141414;
-  color: #000;
+  color: #fff;
 }
 .ui-datepicker table td .ui-state-highlight,
 .ui-datepicker table td .ui-state-highlight:hover {
   border: 1px solid #141414;
   background: #141414;
-  color: #000;
+  color: #fff;
 }
 .ui-datepicker table td .ui-state-active,
 .ui-datepicker table td .ui-state-active:hover {
   background: #000;
   border-color: #000;
-  color: #000;
+  color: #fff;
 }
 .ui-datepicker .ui-datepicker-title {
   color: #000;
@@ -13996,7 +13996,7 @@ a.tooltip:hover {
   cursor: pointer;
 }
 .ui-datepicker button.ui-datepicker-current {
-  color: #000;
+  color: #fff;
   background: #333333;
   border-color: #333333;
   font-size: 1em;
@@ -14034,7 +14034,7 @@ a.tooltip:hover {
   margin-top: 1em;
 }
 .ui-datepicker .ui-timepicker-div #ui_tpicker_time_Inputfield_date {
-  color: #000;
+  color: #fff;
 }
 .ui-datepicker .ui-timepicker-div .ui-widget-header {
   margin-bottom: 8px;
