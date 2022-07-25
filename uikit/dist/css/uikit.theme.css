@@ -17805,6 +17805,8 @@ html.highlightRows .PageListItem:hover {
 .Inputfields a {
   text-decoration: underline;
 }
+.InputfieldAsmSelect a,
+.InputfieldRepeaterAddItem a,
 button a,
 .InputfieldPageNameURL a,
 .PageListContainer a,
