@@ -17802,6 +17802,13 @@ html.highlightRows .PageListItem:hover {
 .ui-tooltip p {
   color: white !important;
 }
+.Inputfields a {
+  text-decoration: underline;
+}
+.PageListContainer a,
+.uk-tab a {
+  text-decoration: none;
+}
 .nav-show-icons #pw-masthead .pw-nav-icon {
   margin-right: 0 !important;
 }
