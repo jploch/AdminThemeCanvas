@@ -18334,7 +18334,7 @@ table .InputfieldIsOffset,
   margin: 0;
   margin-bottom: 1px;
 }
-.Inputfields .InputfieldRepeater .InputfieldContent .InputfieldRepeaterItem .InputfieldHeader {
+.Inputfields .InputfieldRepeater .InputfieldContent .InputfieldRepeaterItem .InputfieldRepeaterHeaderInit {
   padding-top: 1em;
   padding-bottom: 1em;
 }
