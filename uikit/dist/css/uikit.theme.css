@@ -17802,9 +17802,11 @@ html.highlightRows .PageListItem:hover {
 .ui-tooltip p {
   color: white !important;
 }
+.AdminDataTable p a,
 .Inputfields a {
   text-decoration: underline;
 }
+.AdminDataTable a,
 .Inputfields .InputfieldButtonLink,
 .PageList a,
 .InputfieldPageAddButton a,
