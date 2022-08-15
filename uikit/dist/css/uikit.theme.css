@@ -17892,6 +17892,10 @@ body.modal #main {
   right: 10px;
   z-index: 99;
 }
+.ui-dialog-buttonset button,
+.ui-dialog-buttonpane button {
+  position: static!important;
+}
 #submit_save,
 #submit_save_unpublished,
 #submit_publish {
