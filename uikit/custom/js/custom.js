@@ -1,16 +1,17 @@
 // edit jp
 $(document).ready(function () {
 
+  if (window.location !== window.parent.location || $('body').hasClass('modal')) {
+    // The page is in an iframe
+    return false;
+  }
+
   //add placeholder to login inputs
-  $('#login_name').attr('placeholder', $('#wrap_login_name label').text() );
-  $('#login_pass').attr('placeholder', $('#wrap_login_pass label').text() );
+  $('#login_name').attr('placeholder', $('#wrap_login_name label').text());
+  $('#login_pass').attr('placeholder', $('#wrap_login_pass label').text());
 
   // title to settings tab
   $('.hide-title #ProcessPageEditSettings').find('.Inputfields').first().prepend($('.InputfieldPageTitle').first());
-
-  if ($('body').hasClass('modal')) {
-    return false;
-  }
 
   // fix dropdowns on the right 
   $(document).on("mouseenter", ".pw-dropdown-menu", function (e) {
@@ -214,9 +215,9 @@ $(document).ready(function () {
   $(document).on('click', '.ProcessPageEditPage, .ProcessPageEditSettings', function (e) {
     e.preventDefault();
     $('html, body').stop().animate({
-        scrollTop: 0
-      }, 300, 'swing',
-      function () {});
+      scrollTop: 0
+    }, 300, 'swing',
+      function () { });
   });
 
   // open view links in new tab
