@@ -17793,12 +17793,16 @@ html.highlightRows .PageListItem:hover {
 .pw-user-nav {
   margin-right: -15px !important;
 }
+.uk-tooltip,
 .ui-tooltip {
   background-color: black !important;
   color: white !important;
 }
+.uk-tooltip a,
 .ui-tooltip a,
+.uk-tooltip span,
 .ui-tooltip span,
+.uk-tooltip p,
 .ui-tooltip p {
   color: white !important;
 }
@@ -18220,7 +18224,7 @@ body .pw-panel-container .pw-panel-button.ui-button {
   opacity: 0;
 }
 .hide-field-title label {
-  display: none !important;
+  display: none;
 }
 .pw .InputfieldForm .InputfieldCKEditorInline {
   border: 1px solid #ccc;
