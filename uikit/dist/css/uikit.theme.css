@@ -17810,6 +17810,7 @@ html.highlightRows .PageListItem:hover {
 .Inputfields a {
   text-decoration: underline;
 }
+.InputfieldPage-editLinks a,
 .AdminDataTable a,
 .Inputfields .InputfieldButtonLink,
 .PageList a,
