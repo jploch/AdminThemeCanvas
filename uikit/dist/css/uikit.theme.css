@@ -17918,6 +17918,11 @@ body.modal #main {
   color: #848484 !important;
   opacity: 0.75 !important;
 }
+html :not(.InputfieldFieldset) > .InputfieldContent > .Inputfields > .InputfieldMarkup.InputfieldHeaderHidden > .InputfieldContent,
+html .InputfieldForm > .Inputfields > .InputfieldMarkup.InputfieldHeaderHidden > .InputfieldContent {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .PageList .PageListItem .PageListActions {
   display: none !important;
   margin-left: 15px !important;
