@@ -18153,9 +18153,6 @@ body > ul.pw-dropdown-custom-settings.pw-dropdown-menu.ui-menu.prnav li > a {
   font-size: 0.875rem !important;
   border: none !important;
 }
-.pw body .pw-dropdown-custom-settings li:last-of-type {
-  display: none;
-}
 .pw-dropdown-custom-settings:after {
   content: '';
   top: -8px !important;
