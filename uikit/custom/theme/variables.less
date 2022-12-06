@@ -54,11 +54,16 @@
 @theme-success-color: #b1b1b1;
 @theme-success-background: #fff;
 
+@pw-inputfield-color-success: #000;
+@pw-inputfield-background-success: #e4fff2;
+
 @theme-warning-color: #000;
 @theme-warning-background: #ffe299;
+@pw-inputfield-color-warning: #000;
 
 @theme-danger-color: #000;
 @theme-danger-background: #f8ada5;
+@pw-inputfield-color-danger: #e11700;
 
 @theme-alert-color: #000;
 @theme-alert-background: #fff;
@@ -227,8 +232,8 @@
 @pw-inputfield-background-primary: lighten(@theme-primary-headline-color, 90%);
 @pw-inputfield-border-primary: 1px solid darken(@pw-inputfield-background-primary, 15%);
 @pw-inputfield-color-warning: @theme-warning-color;
-@pw-inputfield-background-warning: lighten(@theme-warning-background, 20%);
-@pw-inputfield-background-danger: lighten(@theme-danger-background, 50%);
+@pw-inputfield-background-warning: @theme-warning-background;
+@pw-inputfield-background-danger: #ffe3e0;
 @pw-inputfield-header-color: @theme-text-color;
 @pw-inputfield-header-collapsed-color: @theme-muted-text-color-alternate;
 @pw-inputfield-header-hover-color: @theme-primary-color;

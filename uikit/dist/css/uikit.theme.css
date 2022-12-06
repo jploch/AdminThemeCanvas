@@ -14878,10 +14878,10 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
 }
 .InputfieldIsSuccess:not(.InputfieldNoBorder) > .InputfieldHeader,
 .InputfieldIsSuccess:not(.InputfieldNoBorder) > .InputfieldContent {
-  background: #ffffff;
+  background: #e4fff2;
 }
 .InputfieldIsSuccess > .InputfieldHeader {
-  color: #fff;
+  color: #000;
 }
 .InputfieldIsHighlight:not(.InputfieldNoBorder) {
   /*
@@ -14906,7 +14906,7 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
 }
 .InputfieldIsWarning:not(.InputfieldNoBorder) > .InputfieldHeader,
 .InputfieldIsWarning:not(.InputfieldNoBorder) > .InputfieldContent {
-  background: #ffffff;
+  background: #ffe299;
 }
 .InputfieldIsWarning > .InputfieldHeader {
   color: #000;
@@ -14926,12 +14926,12 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
 .InputfieldStateError:not(.InputfieldNoBorder) > .InputfieldContent,
 .InputfieldIsDanger:not(.InputfieldNoBorder) > .InputfieldContent,
 .InputfieldIsError:not(.InputfieldNoBorder) > .InputfieldContent {
-  background: #ffffff;
+  background: #ffe3e0;
 }
 .InputfieldStateError > .InputfieldHeader,
 .InputfieldIsDanger > .InputfieldHeader,
 .InputfieldIsError > .InputfieldHeader {
-  color: #f8ada5;
+  color: #e11700;
 }
 /*** AsmSelect **************************************************************/
 .asmContainer {
