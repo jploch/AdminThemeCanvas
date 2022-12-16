@@ -14865,8 +14865,8 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
 .InputfieldIsClear > .InputfieldContent {
   background: none;
 }
-.InputfieldIsSecondary > .InputfieldHeader,
-.InputfieldIsSecondary > .InputfieldContent {
+.InputfieldIsSecondary:not(.InputfieldImage, .InputfieldFile) > .InputfieldHeader,
+.InputfieldIsSecondary:not(.InputfieldImage, .InputfieldFile) > .InputfieldContent {
   background: #ededed;
 }
 .InputfieldIsSuccess:not(.InputfieldNoBorder) {
