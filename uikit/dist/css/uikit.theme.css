@@ -1948,7 +1948,7 @@ select.uk-form-width-xsmall {
 /* OnClick + Active */
 .uk-button-secondary:active,
 .uk-button-secondary.uk-active {
-  background-color: #cccccc;
+  background-color: #cdcdcd;
   color: #000;
 }
 /*
@@ -3653,12 +3653,12 @@ ul.uk-nav-sub {
   width: 1.5em;
   height: 1.5em;
   float: right;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23c7c7c7%22%20stroke-width%3D%221.1%22%20points%3D%2210%201%204%207%2010%2013%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23e0e0e0%22%20stroke-width%3D%221.1%22%20points%3D%2210%201%204%207%2010%2013%22%20%2F%3E%0A%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 .uk-nav-parent-icon > .uk-parent.uk-open > a::after {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23c7c7c7%22%20stroke-width%3D%221.1%22%20points%3D%221%204%207%2010%2013%204%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23e0e0e0%22%20stroke-width%3D%221.1%22%20points%3D%221%204%207%2010%2013%204%22%20%2F%3E%0A%3C%2Fsvg%3E");
 }
 /* Header
  ========================================================================== */
@@ -15543,7 +15543,7 @@ body.pw-layout-sidenav-side #pw-sidenav-bar {
   }
 }
 .pw-sidebar-nav > li {
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #e6e6e6;
   padding: 5px 0;
 }
 .pw-sidebar-nav > li:first-child {
@@ -15556,27 +15556,27 @@ body.pw-layout-sidenav-side #pw-sidenav-bar {
   color: #333;
 }
 .pw-sidebar-nav > li > ul > li {
-  border-top: 1px solid #cccccc;
-  border-color: #e0e0e0;
+  border-top: 1px solid #e6e6e6;
+  border-color: #fafafa;
   padding: 4px 0;
 }
 .pw-sidebar-nav > li > ul > li .highlight,
 .pw-sidebar-nav > li > ul > li .separator {
-  border-top: 1px solid #cccccc;
-  border-color: #e0e0e0;
+  border-top: 1px solid #e6e6e6;
+  border-color: #fafafa;
   margin-top: 4px;
   padding-top: 3px;
 }
 .pw-sidebar-nav > li > ul > li .pw-nav-add,
 .pw-sidebar-nav > li > ul > li .pw-nav-dup {
   padding: 3px 0;
-  border-bottom: 1px solid #cccccc;
-  border-bottom-color: #e0e0e0;
+  border-bottom: 1px solid #e6e6e6;
+  border-bottom-color: #fafafa;
 }
 .pw-sidebar-nav > li > ul > li .pw-nav-add:first-child,
 .pw-sidebar-nav > li > ul > li .pw-nav-dup:first-child {
-  border-top: 1px solid #cccccc;
-  border-top-color: #e0e0e0;
+  border-top: 1px solid #e6e6e6;
+  border-top-color: #fafafa;
 }
 .pw-sidebar-nav > li > ul > li .pw-nav-add + li:not(.pw-nav-add):not(.pw-nav-dup),
 .pw-sidebar-nav > li > ul > li .pw-nav-dup + li:not(.pw-nav-add):not(.pw-nav-dup) {
@@ -17537,10 +17537,10 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
 }
 #offcanvas-nav .uk-offcanvas-bar {
   top: 50px !important;
-  background: #e6e6e6;
+  background: #fff;
   padding: 0;
   box-shadow: none;
-  border-right: 1px solid #cccccc;
+  border-right: 1px solid #e6e6e6;
   width: 280px !important;
 }
 #offcanvas-nav #offcanvas-nav-header {
@@ -17563,7 +17563,7 @@ body .transFilter + ul .InputfieldHeader.InputfieldHeaderHidden + .InputfieldCon
 }
 #offcanvas-nav .pw-sidebar-nav li.uk-open {
   padding-bottom: 0;
-  background: #ededed;
+  background: #ffffff;
 }
 #offcanvas-nav .pw-sidebar-nav li.uk-open > a {
   color: #000;
@@ -17951,10 +17951,6 @@ body .ui-front {
 }
 .InputfieldAsmSelect .asmListItem > .asmListItemStatus > .columnWidth:not(.columnWidthOff):hover {
   color: #000;
-}
-.InputfieldIsSecondary > .InputfieldContent,
-.InputfieldIsSecondary > .InputfieldHeader {
-  background: none;
 }
 #main .gridImage .gridImage__inner:hover,
 .gridImage.gridImageEditing .gridImage__inner {
