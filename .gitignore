@@ -1,3 +1,7 @@
 node_modules
 uikit/node_modules
 .DS_Store
+.DS_Store
+uikit/.DS_Store
+.DS_Store
+uikit/tests/.DS_Store
