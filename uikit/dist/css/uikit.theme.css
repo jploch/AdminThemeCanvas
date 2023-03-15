@@ -17895,7 +17895,7 @@ body.modal #main {
 }
 .ui-dialog-buttonset button,
 .ui-dialog-buttonpane button {
-  position: static!important;
+  position: static !important;
 }
 #submit_save,
 #submit_save_unpublished,
@@ -18063,16 +18063,30 @@ body > ul.pw-dropdown-menu.page ul.ui-menu[style*="left"] ul,
   width: 200px !important;
   height: 100%;
 }
-.pw-dropdown-menu.ui-menu .ui-menu li {
+.pw-dropdown-menu li {
   background-color: #262626;
+  width: 200px !important;
 }
 .pw-dropdown-menu.ui-menu.page .ui-menu li {
   width: 200px;
 }
-.pw-dropdown-menu.ui-menu.page li a {
+.pw-dropdown-menu.ui-menu li a {
   width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.pw-dropdown-menu::-webkit-scrollbar,
+.pw-dropdown-menu ul::-webkit-scrollbar {
+  display: none!important;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.pw-dropdown-menu,
+.pw-dropdown-menu ul {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 .pw ul.pw-dropdown-menu.ui-menu li:last-of-type > a,
 .pw ul.pw-dropdown-menu.ui-menu .ui-menu li:last-of-type > a {

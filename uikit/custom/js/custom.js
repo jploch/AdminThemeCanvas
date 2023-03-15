@@ -62,7 +62,7 @@ $(document).ready(function () {
     $('.pw-dropdown-menu.page .subnav-list.navJSON').removeClass('navJSON');
   });
 
-  $(document).on("mouseenter", ".pw-dropdown-menu.page ul li", function () {
+  $(document).on("mouseenter", ".pw-dropdown-menu ul li", function () {
 
     var offset = $(this).offset();
     var dropdownOffset = offset.top;
