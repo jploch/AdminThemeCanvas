@@ -17007,12 +17007,6 @@ body .uk-form-controls-text label:only-of-type input.uk-checkbox:checked:after,
   left: 1.85em;
   box-shadow: none;
 }
-body .InputfieldCheckboxes label,
-#main .InputfieldCheckboxes label,
-body .InputfieldCheckbox label,
-#main .InputfieldCheckbox label {
-  white-space: inherit;
-}
 body .InputfieldCheckboxes .InputfieldCheckboxesStacked li,
 #main .InputfieldCheckboxes .InputfieldCheckboxesStacked li,
 body .InputfieldCheckbox .InputfieldCheckboxesStacked li,
