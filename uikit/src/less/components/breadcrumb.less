@@ -19,6 +19,7 @@
 
 @breadcrumb-divider:                                "/";
 @breadcrumb-divider-margin-horizontal:              20px;
+@breadcrumb-divider-font-size:                      @breadcrumb-item-font-size;
 @breadcrumb-divider-color:                          @global-muted-color;
 
 
@@ -27,32 +28,26 @@
  ========================================================================== */
 
 /*
- * 1. Allow items to wrap into the next line
- * 2. Reset list
+ * Reset list
  */
 
 .uk-breadcrumb {
-    display: flex;
-    /* 1 */
-    flex-wrap: wrap;
-    /* 2 */
     padding: 0;
     list-style: none;
     .hook-breadcrumb;
 }
 
 /*
- * Space is allocated solely based on content dimensions: 0 0 auto
+ * 1. Doesn't generate any box and replaced by child boxes
  */
 
-.uk-breadcrumb > * { flex: none; }
+.uk-breadcrumb > * { display: contents; }
 
 
 /* Items
  ========================================================================== */
 
 .uk-breadcrumb > * > * {
-    display: inline-block;
     font-size: @breadcrumb-item-font-size;
     color: @breadcrumb-item-color;
     .hook-breadcrumb-item;
@@ -72,7 +67,8 @@
 }
 
 /* Active */
-.uk-breadcrumb > :last-child > * {
+.uk-breadcrumb > :last-child > span,
+.uk-breadcrumb > :last-child > a:not([href]) {
     color: @breadcrumb-item-active-color;
     .hook-breadcrumb-item-active;
 }
@@ -80,12 +76,17 @@
 /*
  * Divider
  * `nth-child` makes it also work without JS if it's only one row
+ * 1. Remove space between inline block elements.
+ * 2. Style
  */
 
 .uk-breadcrumb > :nth-child(n+2):not(.uk-first-column)::before {
     content: @breadcrumb-divider;
     display: inline-block;
-    margin: 0 @breadcrumb-divider-margin-horizontal;
+    /* 1 */
+    margin: 0 @breadcrumb-divider-margin-horizontal 0 ~'calc(@{breadcrumb-divider-margin-horizontal} - 4px)';
+    /* 2 */
+    font-size: @breadcrumb-divider-font-size;
     color: @breadcrumb-divider-color;
     .hook-breadcrumb-divider;
 }

@@ -11,6 +11,15 @@
 // ========================================================================
 
 
+// Variables
+// ========================================================================
+
+@slider-container-margin-top:                       -11px;
+@slider-container-margin-bottom:                    -39px;
+@slider-container-margin-left:                      -25px;
+@slider-container-margin-right:                     -25px;
+
+
 /* ========================================================================
    Component: Slider
  ========================================================================== */
@@ -30,12 +39,18 @@
  ========================================================================== */
 
 /*
- * 1. Clip child elements
+ * Clip child elements
  */
 
-.uk-slider-container {
-    /* 1 */
-    overflow: hidden;
+.uk-slider-container { overflow: hidden; }
+
+/*
+ * Widen container to prevent box-shadows from clipping, `large-box-shadow`
+ */
+
+.uk-slider-container-offset {
+    margin: @slider-container-margin-top @slider-container-margin-right @slider-container-margin-bottom @slider-container-margin-left;
+    padding: (@slider-container-margin-top * -1) (@slider-container-margin-right * -1) (@slider-container-margin-bottom * -1) (@slider-container-margin-left * -1);
 }
 
 /* Items
@@ -76,18 +91,24 @@
 
 /*
  * 1. Let items take content dimensions (0 0 auto)
- * 2. Create position context
- * 3. Disable horizontal panning gestures in IE11 and Edge
+ *    `max-width` needed to keep image responsiveness and prevent content overflow
+ * 3. Create position context
+ * 4. Disable horizontal panning gestures in IE11 and Edge
+ * 5. Suppress outline on focus
  */
 
 .uk-slider-items > * {
     /* 1 */
     flex: none;
-    /* 2 */
-    position: relative;
+    max-width: 100%;
     /* 3 */
+    position: relative;
+    /* 4 */
     touch-action: pan-y;
 }
+
+/* 5 */
+.uk-slider-items > :focus { outline: none; }
 
 
 // Hooks

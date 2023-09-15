@@ -3,10 +3,20 @@
 //
 // Component:       `uk-list`
 //
-// Modifiers:       `uk-list-divider`
-//                  `uk-list-striped`
+// Modifiers:       `uk-list-disc`
+//                  `uk-list-circle`
+//                  `uk-list-square`
+//                  `uk-list-decimal`
+//                  `uk-list-hyphen`
+//                  `uk-list-muted`
+//                  `uk-list-emphasis`
+//                  `uk-list-primary`
+//                  `uk-list-secondary`
 //                  `uk-list-bullet`
+//                  `uk-list-divider`
+//                  `uk-list-striped`
 //                  `uk-list-large`
+//                  `uk-list-collapse`
 //
 // ========================================================================
 
@@ -16,7 +26,16 @@
 
 @list-margin-top:                               @global-small-margin;
 
-@list-nested-padding-left:                      @global-gutter;
+@list-padding-left:                             30px;
+
+@list-marker-height:                            (@global-line-height * 1em);
+
+@list-muted-color:                              @global-muted-color;
+@list-emphasis-color:                           @global-emphasis-color;
+@list-primary-color:                            @global-primary-background;
+@list-secondary-color:                          @global-secondary-background;
+
+@list-bullet-icon-color:                        @global-color;
 
 @list-divider-margin-top:                       @global-small-margin;
 @list-divider-border-width:                     @global-border-width;
@@ -25,11 +44,6 @@
 @list-striped-padding-vertical:                 @global-small-margin;
 @list-striped-padding-horizontal:               @global-small-margin;
 @list-striped-background:                       @global-muted-background;
-
-@list-bullet-width:                             (@global-line-height * 1em);
-@list-bullet-height:                            @list-bullet-width;
-@list-bullet-margin-right:                      @global-small-margin;
-@list-bullet-icon-color:                        @global-color;
 
 @list-large-margin-top:                         @global-margin;
 @list-large-divider-margin-top:                 @global-margin;
@@ -49,39 +63,81 @@
 }
 
 /*
- * Micro clearfix
- */
-
-.uk-list > li::before,
-.uk-list > li::after {
-    content: "";
-    display: table;
-}
-
-.uk-list > li::after { clear: both; }
-
-/*
  * Remove margin from the last-child
  */
 
-.uk-list > li > :last-child { margin-bottom: 0; }
-
-/*
- * Nested lists
- */
-
-.uk-list ul {
-    margin: 0;
-    padding-left: @list-nested-padding-left;
-    list-style: none;
-}
+.uk-list > * > :last-child { margin-bottom: 0; }
 
 /*
  * Style
  */
 
-.uk-list > li:nth-child(n+2),
-.uk-list > li > ul { margin-top: @list-margin-top; }
+.uk-list > :nth-child(n+2),
+.uk-list > * > ul { margin-top: @list-margin-top; }
+
+
+/* Marker modifiers
+ * Moving `::marker` inside `::before` to style it differently
+ * To style the `::marker` is currently only supported in Firefox and Safari
+ ========================================================================== */
+
+.uk-list-disc > *,
+.uk-list-circle > *,
+.uk-list-square > *,
+.uk-list-decimal > *,
+.uk-list-hyphen > * { padding-left: @list-padding-left; }
+
+/*
+ * Type modifiers
+ */
+
+.uk-list-decimal { counter-reset: decimal; }
+.uk-list-decimal > * { counter-increment: decimal; }
+
+[class*='uk-list'] > ::before {
+    content: '';
+    position: relative;
+    left: -@list-padding-left;
+    width: @list-padding-left;
+    height: @list-marker-height;
+    margin-bottom: -@list-marker-height;
+    display: list-item;
+    list-style-position: inside;
+    text-align: right;
+}
+
+.uk-list-disc > ::before { list-style-type: disc; }
+.uk-list-circle > ::before { list-style-type: circle; }
+.uk-list-square > ::before { list-style-type: square; }
+.uk-list-decimal > ::before { content: counter(decimal, decimal) '\200A.\00A0'; }
+.uk-list-hyphen > ::before { content: '–\00A0\00A0'; }
+
+/*
+ * Color modifiers
+ */
+
+.uk-list-muted > ::before { color: @list-muted-color !important; }
+.uk-list-emphasis > ::before { color: @list-emphasis-color !important; }
+.uk-list-primary > ::before { color: @list-primary-color !important; }
+.uk-list-secondary > ::before { color: @list-secondary-color !important; }
+
+
+/* Image bullet modifier
+ ========================================================================== */
+
+.uk-list-bullet > * { padding-left: @list-padding-left; }
+
+.uk-list-bullet > ::before {
+    content: "";
+    position: relative;
+    left: -@list-padding-left;
+    width: @list-padding-left;
+    height: @list-marker-height;
+    margin-bottom: -@list-marker-height;
+    .svg-fill(@internal-list-bullet-image, "#000", @list-bullet-icon-color);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
 
 
 /* Style modifiers
@@ -91,7 +147,7 @@
  * Divider
  */
 
-.uk-list-divider > li:nth-child(n+2) {
+.uk-list-divider > :nth-child(n+2) {
     margin-top: @list-divider-margin-top;
     padding-top: @list-divider-margin-top;
     border-top: @list-divider-border-width solid @list-divider-border;
@@ -102,66 +158,52 @@
  * Striped
  */
 
-.uk-list-striped > li {
+.uk-list-striped > * {
     padding: @list-striped-padding-vertical @list-striped-padding-horizontal;
     .hook-list-striped;
 }
 
-.uk-list-striped > li:nth-of-type(odd) { background: @list-striped-background; }
+.uk-list-striped > :nth-of-type(odd) { background: @list-striped-background; }
 
-.uk-list-striped > li:nth-child(n+2) { margin-top: 0; }
-
-/*
- * Bullet
- * 1. Reset display table which causes issues in combination with multi column layouts
- */
-
-.uk-list-bullet > li {
-    position: relative;
-    padding-left: ~'calc(@{list-bullet-width} + @{list-bullet-margin-right})';
-}
-
-.uk-list-bullet > li::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: @list-bullet-width;
-    height: @list-bullet-height;
-    .svg-fill(@internal-list-bullet-image, "#000", @list-bullet-icon-color);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    /* 1 */
-    display: block;
-    .hook-list-bullet;
-}
+.uk-list-striped > :nth-child(n+2) { margin-top: 0; }
 
 
 /* Size modifier
  ========================================================================== */
 
-.uk-list-large > li:nth-child(n+2),
-.uk-list-large > li > ul { margin-top: @list-large-margin-top; }
+.uk-list-large > :nth-child(n+2),
+.uk-list-large > * > ul { margin-top: @list-large-margin-top; }
+
+.uk-list-collapse > :nth-child(n+2),
+.uk-list-collapse > * > ul { margin-top: 0; }
 
 /*
  * Divider
  */
 
-.uk-list-large.uk-list-divider > li:nth-child(n+2) {
+.uk-list-large.uk-list-divider > :nth-child(n+2) {
     margin-top: @list-large-divider-margin-top;
     padding-top: @list-large-divider-margin-top;
+}
+
+.uk-list-collapse.uk-list-divider > :nth-child(n+2) {
+    margin-top: 0;
+    padding-top: 0;
 }
 
 /*
  * Striped
  */
 
-.uk-list-large.uk-list-striped > li {
-    padding: @list-large-striped-padding-vertical @list-large-striped-padding-horizontal;
-    .hook-list-striped;
+.uk-list-large.uk-list-striped > * { padding: @list-large-striped-padding-vertical @list-large-striped-padding-horizontal; }
+
+.uk-list-collapse.uk-list-striped > * {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-.uk-list-large.uk-list-striped > li:nth-child(n+2) { margin-top: 0; }
+.uk-list-large.uk-list-striped > :nth-child(n+2),
+.uk-list-collapse.uk-list-striped > :nth-child(n+2) { margin-top: 0; }
 
 
 // Hooks
@@ -171,37 +213,45 @@
 
 .hook-list-divider() {}
 .hook-list-striped() {}
-.hook-list-bullet() {}
 .hook-list-misc() {}
 
 
 // Inverse
 // ========================================================================
 
+@inverse-list-muted-color:                        @inverse-global-muted-color;
+@inverse-list-emphasis-color:                     @inverse-global-emphasis-color;
+@inverse-list-primary-color:                      @inverse-global-primary-background;
+@inverse-list-secondary-color:                    @inverse-global-primary-background;
+
 @inverse-list-divider-border:                     @inverse-global-border;
 @inverse-list-striped-background:                 @inverse-global-muted-background;
+
 @inverse-list-bullet-icon-color:                  @inverse-global-color;
 
 .hook-inverse() {
 
-    .uk-list-divider > li:nth-child(n+2) {
+    .uk-list-muted > ::before { color: @inverse-list-muted-color !important; }
+    .uk-list-emphasis > ::before { color: @inverse-list-emphasis-color !important; }
+    .uk-list-primary > ::before { color: @inverse-list-primary-color !important; }
+    .uk-list-secondary > ::before { color: @inverse-list-secondary-color !important; }
+
+    .uk-list-bullet > ::before {
+        .svg-fill(@internal-list-bullet-image, "#000", @inverse-list-bullet-icon-color);
+    }
+
+    .uk-list-divider > :nth-child(n+2) {
         border-top-color: @inverse-list-divider-border;
         .hook-inverse-list-divider;
     }
 
-    .uk-list-striped > li {
+    .uk-list-striped > * {
         .hook-inverse-list-striped;
     }
 
-    .uk-list-striped > li:nth-of-type(odd) { background-color: @inverse-list-striped-background; }
-
-    .uk-list-bullet > li::before {
-        .svg-fill(@internal-list-bullet-image, "#000", @inverse-list-bullet-icon-color);
-        .hook-inverse-list-bullet;
-    }
+    .uk-list-striped > :nth-of-type(odd) { background-color: @inverse-list-striped-background; }
 
 }
 
 .hook-inverse-list-divider() {}
 .hook-inverse-list-striped() {}
-.hook-inverse-list-bullet() {}

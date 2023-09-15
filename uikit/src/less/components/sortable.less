@@ -34,12 +34,6 @@
 }
 
 /*
- * Deactivate pointer-events on SVGs in Safari
- */
-
-.uk-sortable svg { pointer-events: none; }
-
-/*
  * Remove margin from the last-child
  */
 
@@ -50,7 +44,7 @@
  ========================================================================== */
 
 .uk-sortable-drag {
-    position: absolute !important;
+    position: fixed !important;
     z-index: @sortable-dragged-z-index !important;
     pointer-events: none;
     .hook-sortable-drag;
@@ -62,6 +56,7 @@
 
 .uk-sortable-placeholder {
     opacity: @sortable-placeholder-opacity;
+    pointer-events: none;
     .hook-sortable-placeholder;
 }
 

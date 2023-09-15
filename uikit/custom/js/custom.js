@@ -84,7 +84,7 @@ $(document).ready(function () {
 
   // put tree add-new link on top
   $(document).ajaxComplete(function () {
-    $(".pw-dropdown-menu.page ul li").each(function () {
+    $(".pw-dropdown-menu ul li").each(function () {
       if ($(this).hasClass('pw-nav-add')) {
         $(this).parent().prepend($(this));
       }

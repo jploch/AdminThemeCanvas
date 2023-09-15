@@ -54,6 +54,7 @@
  * 4. Horizontal padding
  * 5. Mask the background page
  * 6. Fade-in transition
+ * 7. Prevent cancellation of pointer events while dragging
  */
 
 .uk-lightbox {
@@ -71,6 +72,8 @@
     /* 6 */
     opacity: 0;
     transition: opacity 0.15s linear;
+    /* 7 */
+    touch-action: pinch-zoom;
     .hook-lightbox;
 }
 
@@ -108,6 +111,7 @@
  * 5. Responsiveness
  *    Using `vh` for `max-height` to fix image proportions after resize in Safari and Opera
  *    Using `vh` and `vw` to make responsive image work in IE11
+ * 6. Suppress outline on focus
  */
 
 .uk-lightbox-items > * {
@@ -133,6 +137,9 @@
     max-width: @lightbox-item-max-width;
     max-height: @lightbox-item-max-height;
 }
+
+/* 6 */
+.uk-lightbox-items > :focus { outline: none; }
 
 .uk-lightbox-items > * > :not(iframe) {
     width: auto;
@@ -194,20 +201,23 @@
     .hook-lightbox-button;
 }
 
-/*
- * Hover
- */
-
-.uk-lightbox-button:hover {
+/* Hover + Focus */
+.uk-lightbox-button:hover,
+.uk-lightbox-button:focus {
     color: @lightbox-button-hover-color;
     .hook-lightbox-button-hover;
+}
+
+/* OnClick */
+.uk-lightbox-button:active {
+    .hook-lightbox-button-active;
 }
 
 
 /* Caption
  ========================================================================== */
 
-.uk-lightbox-caption {}
+.uk-lightbox-caption:empty { display: none; }
 
 
 /* Iframe
@@ -231,4 +241,5 @@
 .hook-lightbox-toolbar-icon-hover() {}
 .hook-lightbox-button() {}
 .hook-lightbox-button-hover() {}
+.hook-lightbox-button-active() {}
 .hook-lightbox-misc() {}
