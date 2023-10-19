@@ -15792,7 +15792,7 @@ ul.uk-navbar-nav ul {
 }
 #pw-masthead {
   background-color: #1C2836;
-  border-bottom: 1px solid #ffffff4f;
+  box-shadow: 0 1px 0 0 rgb(255 255 255 / 30%)!important;
 }
 #pw-masthead .uk-navbar-nav > li {
   position: relative;
