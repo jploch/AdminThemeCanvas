@@ -15792,6 +15792,7 @@ ul.uk-navbar-nav ul {
 }
 #pw-masthead {
   background-color: #1C2836;
+  border-bottom: 1px solid #ffffff4f;
 }
 #pw-masthead .uk-navbar-nav > li {
   position: relative;
