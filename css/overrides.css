@@ -1,3 +1,24 @@
+/* account for fixed nav */
 .tox-tinymce--toolbar-sticky-on .tox-editor-header {
    translate: 0 50px;
+}
+
+/* allow for fixed repeater items */
+.InputfieldRepeater[data-min='2'][data-max='2'] .InputfieldRepeaterAddItem,
+.InputfieldRepeater[data-min='3'][data-max='3'] .InputfieldRepeaterAddItem,
+.InputfieldRepeater[data-min='4'][data-max='4'] .InputfieldRepeaterAddItem,
+.InputfieldRepeater[data-min='5'][data-max='5'] .InputfieldRepeaterAddItem,
+.InputfieldRepeater[data-min='6'][data-max='6'] .InputfieldRepeaterAddItem,
+.InputfieldRepeater[data-min='7'][data-max='7'] .InputfieldRepeaterAddItem,
+.InputfieldRepeater[data-min='8'][data-max='8'] .InputfieldRepeaterAddItem,
+.InputfieldRepeater[data-min='9'][data-max='9'] .InputfieldRepeaterAddItem,
+.InputfieldRepeater[data-min='2'][data-max='2'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
+.InputfieldRepeater[data-min='3'][data-max='3'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
+.InputfieldRepeater[data-min='4'][data-max='4'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
+.InputfieldRepeater[data-min='5'][data-max='5'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
+.InputfieldRepeater[data-min='6'][data-max='6'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
+.InputfieldRepeater[data-min='7'][data-max='7'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
+.InputfieldRepeater[data-min='8'][data-max='8'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
+.InputfieldRepeater[data-min='9'][data-max='9'] .InputfieldRepeaterItemControls > i:not(.toggle-icon) {
+ display: none !important;
 }
