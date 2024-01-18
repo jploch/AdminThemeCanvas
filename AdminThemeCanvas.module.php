@@ -1,4 +1,6 @@
-<?php namespace ProcessWire;
+<?php
+
+namespace ProcessWire;
 
 /**
  * AdminThemeUikit
@@ -26,15 +28,15 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 
 	public static function getModuleInfo() {
 		return array(
-			 "title" => "Admin Theme Canvas",
-	         "summary" => "A minimal theme with optimised page editor UI, based on Uikit 3",
-	         "href" => "https://github.com/jploch/AdminThemeCanvas",
-	         "version" => "0.67",
-	         "author" => "Jan Ploch",
-	         "icon" => "paint-brush",
-			'autoload' => 'template=admin', 
+			"title" => "Admin Theme Canvas",
+			"summary" => "A minimal theme with optimised page editor UI, based on Uikit 3",
+			"href" => "https://github.com/jploch/AdminThemeCanvas",
+			"version" => "0.68",
+			"author" => "Jan Ploch",
+			"icon" => "paint-brush",
+			'autoload' => 'template=admin',
 			'requires' => 'ProcessWire>=3.0.100'
-		); 
+		);
 	}
 
 	/**
@@ -68,9 +70,9 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 * 
 	 */
 	public function __construct() {
-		
+
 		parent::__construct();
-		
+
 		$this->set('useOffset', false);
 		$this->set('cardTypes', array());
 		$this->set('offsetTypes', array());
@@ -78,14 +80,14 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$this->set('cssURL', '');
 		$this->set('layout', '');
 		$this->set('noBorderTypes', array()); // 'InputfieldCKEditor' is a good one for this
-		$this->set('logoAction', 0); 
-		$this->set('userLabel', '{Name}'); 
-		$this->set('userAvatar', 'icon.user-circle'); 
-		$this->set('maxWidth', 1600); 
+		$this->set('logoAction', 0);
+		$this->set('userLabel', '{Name}');
+		$this->set('userAvatar', 'icon.user-circle');
+		$this->set('maxWidth', 1600);
 		$this->set('groupNotices', true);
 		$this->set('inputSize', 'm'); // m=medium (default), s=small, l=large
-		$this->set('noGrid', false); 
-		
+		$this->set('noGrid', false);
+
 		$this->setClasses(array(
 			'input' => 'uk-input',
 			'input-checkbox' => 'uk-checkbox',
@@ -98,10 +100,10 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 			'table' => 'uk-table uk-table-divider uk-table-justify uk-table-small',
 			'dl' => 'uk-description-list uk-description-list-divider',
 		));
-		
-		$this->addHookAfter('InputfieldSelector::ajaxReady', $this, 'hookInputfieldSelectorAjax'); 
+
+		$this->addHookAfter('InputfieldSelector::ajaxReady', $this, 'hookInputfieldSelectorAjax');
 	}
-	
+
 	/**
 	 * Initialize and attach hooks
 	 * 
@@ -110,65 +112,67 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		parent::init();
 
 		// if this is not the current admin theme, exit now so no hooks are attached
-		if(!$this->isCurrent()) return;
-	
+		if (!$this->isCurrent()) return;
+
 		/** @var Page $page */
 		$page = $this->wire('page');
 		/** @var Modules $modules */
 		$modules = $this->wire('modules');
 		/** @var Modules $modules */
-		$session = $this->wire('session');     
-         
-         // add classes to show icons
-   $this->addHookBefore('AdminTheme::getExtraMarkup', function($event) {
-    $theme = $event->object;
-    if($this->get('nav-icons')) {
-         $theme->addBodyClass($this->get('nav-icons'));
-         }
-     if($this->get('hide-title')) {
-         $theme->addBodyClass('hide-title');
-         }
-     if($this->get('tree-panel-active')) {
-         $theme->addBodyClass('tree-panel-active');
-         }
-      if($this->get('breadcrump')) {
-         $theme->addBodyClass($this->get('breadcrump'));
-         }
-     
-}); 
-      
-	
+		$session = $this->wire('session');
+
+		//add new custom css overrides, so no need to compile everytime :)
+		$this->config->styles->add($this->config->urls->AdminThemeCanvas . "css/overrides.css");
+
+		// add classes to show icons
+		$this->addHookBefore('AdminTheme::getExtraMarkup', function ($event) {
+			$theme = $event->object;
+			if ($this->get('nav-icons')) {
+				$theme->addBodyClass($this->get('nav-icons'));
+			}
+			if ($this->get('hide-title')) {
+				$theme->addBodyClass('hide-title');
+			}
+			if ($this->get('tree-panel-active')) {
+				$theme->addBodyClass('tree-panel-active');
+			}
+			if ($this->get('breadcrump')) {
+				$theme->addBodyClass($this->get('breadcrump'));
+			}
+		});
+
+
 		$sidenav = strpos($this->layout, 'sidenav') === 0;
 
 		// disable sidebar layout if SystemNotifications is active
-		if($sidenav && $modules->isInstalled('SystemNotifications')) {
-			if(!$modules->get('SystemNotifications')->disabled) {
+		if ($sidenav && $modules->isInstalled('SystemNotifications')) {
+			if (!$modules->get('SystemNotifications')->disabled) {
 				$this->layout = '';
 				$sidenav = false;
 			}
 		}
-		
-		if(!$page || $page->template != 'admin') {
+
+		if (!$page || $page->template != 'admin') {
 			// front-end
-			if($sidenav) {
+			if ($sidenav) {
 				// ensure that page edit links on front-end load the sidenav-init 
 				$session->setFor('Page', 'appendEditUrl', "&layout=sidenav-init");
 			}
 			return;
 		}
-	
+
 		$inputSize = $this->get('inputSize');
-		if($inputSize && $inputSize != 'm') {
+		if ($inputSize && $inputSize != 'm') {
 			$inputClass = $inputSize === 'l' ? 'uk-form-large' : 'uk-form-small';
-			foreach(array('input', 'select', 'textarea') as $name) {
-				$this->addClass($name, $inputClass); 
+			foreach (array('input', 'select', 'textarea') as $name) {
+				$this->addClass($name, $inputClass);
 			}
 		}
-		
-		if($this->noGrid) {
-			$this->addClass('body', 'AdminThemeUikitNoGrid'); 
+
+		if ($this->noGrid) {
+			$this->addClass('body', 'AdminThemeUikitNoGrid');
 		}
-		
+
 		$session->removeFor('Page', 'appendEditUrl');
 		/** @var JqueryUI $jqueryUI */
 		$jqueryUI = $modules->get('JqueryUI');
@@ -180,21 +184,21 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$this->addHookAfter('Inputfield::getConfigInputfields', $this, 'hookAfterInputfieldGetConfigInputfields');
 		$this->addHookAfter('Inputfield::getConfigAllowContext', $this, 'hookAfterInputfieldGetConfigAllowContext');
 		$this->addHookAfter('MarkupAdminDataTable::render', $this, 'hookAfterTableRender');
-	
+
 		// hooks and settings specific to sidebar layouts
-		if($sidenav) {
+		if ($sidenav) {
 			$this->addHookAfter('ProcessLogin::afterLoginURL', $this, 'hookAfterLoginURL');
-			if(strpos($this->layout, 'sidenav-tree') === 0) {
+			if (strpos($this->layout, 'sidenav-tree') === 0) {
 				// page-edit breadcrumbs go to page editor when page tree is always in sidebar
 				$this->wire('config')->pageEdit('editCrumbs', true);
 			}
 		}
-		
+
 		// add cache clearing hooks
 		$this->wire('pages')->addHookAfter('saved', $this, 'hookClearCaches');
 		$modules->addHookAfter('refresh', $this, 'hookClearCaches');
 	}
-	
+
 	/**
 	 * Render an extra markup region
 	 *
@@ -204,7 +208,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 */
 	public function renderExtraMarkup($for) {
 		$out = parent::renderExtraMarkup($for);
-		if($for === 'notices') {
+		if ($for === 'notices') {
 		}
 		return $out;
 	}
@@ -216,10 +220,10 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 *
 	 */
 	public function testNotices() {
-		if(parent::testNotices()) {
+		if (parent::testNotices()) {
 			$v = $this->wire('input')->get('test_notices');
-			if($v === 'group-off') $this->groupNotices = false; 
-			if($v === 'group-on') $this->groupNotices = true; 
+			if ($v === 'group-off') $this->groupNotices = false;
+			if ($v === 'group-on') $this->groupNotices = true;
 			return true;
 		}
 		return false;
@@ -234,38 +238,38 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 * 
 	 */
 	protected function getUkWidthClass($columnWidth, array $widths) {
-		
+
 		static $minColumnWidth = null;
-		
+
 		$ukWidthClass = '1-1';
-		
-		if($minColumnWidth === null) {
+
+		if ($minColumnWidth === null) {
 			$widthKeys = array_keys($widths);
 			sort($widthKeys, SORT_NATURAL);
 			$minColumnWidth = (int) reset($widthKeys);
 		}
 
-		if($columnWidth < 10) {
+		if ($columnWidth < 10) {
 			// use uk-width-1-1
-		} else if($columnWidth && $columnWidth < 100) {
-			if($columnWidth < $minColumnWidth) $columnWidth = $minColumnWidth;
+		} else if ($columnWidth && $columnWidth < 100) {
+			if ($columnWidth < $minColumnWidth) $columnWidth = $minColumnWidth;
 			// determine column width class
-			foreach($widths as $pct => $uk) {
+			foreach ($widths as $pct => $uk) {
 				$pct = (int) $pct;
-				if($columnWidth >= $pct) {
+				if ($columnWidth >= $pct) {
 					$ukWidthClass = $uk;
 					break;
 				}
 			}
 		}
-		
-		if($ukWidthClass === '1-1') {
+
+		if ($ukWidthClass === '1-1') {
 			return "uk-width-1-1";
 		} else {
 			return "uk-width-$ukWidthClass@m";
 		}
 	}
-	
+
 	/*******************************************************************************************
 	 * HOOKS
 	 *
@@ -289,7 +293,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$columnWidth = (int) $inputfield->getSetting('columnWidth');
 		$field = $inputfield->hasField;
 		$isFieldset = $inputfield instanceof InputfieldFieldset;
-		$isMarkup = $inputfield instanceof InputfieldMarkup; 
+		$isMarkup = $inputfield instanceof InputfieldMarkup;
 		$isWrapper = $inputfield instanceof InputfieldWrapper && !$isFieldset && !$isMarkup;
 		$ukWidthClass = 'uk-width-1-1';
 		$globalInputSize = $this->get('inputSize');
@@ -300,57 +304,57 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$themeInputSize = '';
 		$themeInputWidth = '';
 		$themeBlank = false;
-        $hideFieldTitle = false;
+		$hideFieldTitle = false;
 		$wrapClasses = array();
 		$inputClasses = array();
 		$removeInputClasses = array();
-		
-		if($inputfield instanceof InputfieldForm) {
-			if($globalInputSize == 's') {
-				$inputfield->addClass('InputfieldFormSmallInputs');	
-			} else if($globalInputSize == 'l') {
-				$inputfield->addClass('InputfieldFormLargeInputs');	
+
+		if ($inputfield instanceof InputfieldForm) {
+			if ($globalInputSize == 's') {
+				$inputfield->addClass('InputfieldFormSmallInputs');
+			} else if ($globalInputSize == 'l') {
+				$inputfield->addClass('InputfieldFormLargeInputs');
 			}
 			return;
-		} else if($inputfield instanceof InputfieldSubmit) {
+		} else if ($inputfield instanceof InputfieldSubmit) {
 			// button
 			$inputfield->addClass('uk-width-auto uk-margin-top', 'wrapClass');
 			return; // no further settings needed for button
 		}
 
-		if(!$noGrid) {
-			$ukWidthClass = $this->getUkWidthClass($columnWidth, $widths); 
-			if($ukWidthClass) $wrapClasses[] = $ukWidthClass;
+		if (!$noGrid) {
+			$ukWidthClass = $this->getUkWidthClass($columnWidth, $widths);
+			if ($ukWidthClass) $wrapClasses[] = $ukWidthClass;
 		}
-		
-		if($isWrapper) {
-			if($ukWidthClass != 'uk-width-1-1') $inputfield->addClass($ukWidthClass, 'wrapClass');
+
+		if ($isWrapper) {
+			if ($ukWidthClass != 'uk-width-1-1') $inputfield->addClass($ukWidthClass, 'wrapClass');
 			return;
-		} else if($inputfield instanceof InputfieldTextarea) {
-			$inputClasses[] = $this->getClass('textarea'); 
-		} else if($inputfield instanceof InputfieldPassword) {
+		} else if ($inputfield instanceof InputfieldTextarea) {
+			$inputClasses[] = $this->getClass('textarea');
+		} else if ($inputfield instanceof InputfieldPassword) {
 			$inputClasses[] = $this->getClass('input-password');
-		} else if($inputfield instanceof InputfieldText) {
+		} else if ($inputfield instanceof InputfieldText) {
 			$inputClasses[] = $this->getClass('input');
-		} else if($inputfield instanceof InputfieldInteger) {
+		} else if ($inputfield instanceof InputfieldInteger) {
 			$inputClasses[] = $this->getClass('input');
-		} else if($inputfield instanceof InputfieldDatetime) {
+		} else if ($inputfield instanceof InputfieldDatetime) {
 			$inputClasses[] = $this->getClass('input');
-		} else if($inputfield instanceof InputfieldCheckboxes || $inputfield instanceof InputfieldCheckbox) {
+		} else if ($inputfield instanceof InputfieldCheckboxes || $inputfield instanceof InputfieldCheckbox) {
 			$inputClasses[] = $this->getClass('input-checkbox');
 			$inputfield->addClass('uk-form-controls-text', 'contentClass');
-		} else if($inputfield instanceof InputfieldRadios) {
+		} else if ($inputfield instanceof InputfieldRadios) {
 			$inputClasses[] = $this->getClass('input-radio');
 			$inputfield->addClass('uk-form-controls-text', 'contentClass');
-		} else if($inputfield instanceof InputfieldAsmSelect) {
+		} else if ($inputfield instanceof InputfieldAsmSelect) {
 			$inputClasses[] = $this->getClass('select-asm');
-		} else if($inputfield instanceof InputfieldSelect && !$inputfield instanceof InputfieldHasArrayValue) {
+		} else if ($inputfield instanceof InputfieldSelect && !$inputfield instanceof InputfieldHasArrayValue) {
 			$inputClasses[] = $this->getClass('select');
-		} else if($inputfield instanceof InputfieldFile) {
+		} else if ($inputfield instanceof InputfieldFile) {
 			$themeColor = 'secondary';
 		}
-		
-		if($field) {
+
+		if ($field) {
 			// pull optional uikit settings from Field object
 			$themeBorder = $field->get('themeBorder');
 			$themeOffset = $field->get('themeOffset');
@@ -358,44 +362,44 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 			$themeInputWidth = $field->get('themeInputWidth');
 			$themeColor = $field->get('themeColor') ? $field->get('themeColor') : $themeColor;
 			$themeBlank = $field->get('themeBlank');
-            $hideFieldTitle = $field->get('hideFieldTitle');
+			$hideFieldTitle = $field->get('hideFieldTitle');
 		}
-		
+
 		// determine custom settings which may be defined with Inputfield
-		if(!$themeBorder) $themeBorder = $inputfield->getSetting('themeBorder');
-		if(!$themeOffset) $themeOffset = $inputfield->getSetting('themeOffset'); // || in_array($class, $this->offsetTypes);
-		if(!$themeColor) $themeColor = $inputfield->getSetting('themeColor');
-		if(!$themeInputSize) $themeInputSize = $inputfield->getSetting('themeInputSize');
-		if(!$themeInputWidth) $themeInputWidth = $inputfield->getSetting('themeInputWidth');
-		if(!$themeBlank) $themeBlank = $inputfield->getSetting('themeBlank');
-        if(!$hideFieldTitle) $hideFieldTitle = $inputfield->getSetting('hideFieldTitle');
-		
-		if(!$themeBorder) {
-			if($formSettings['useBorders'] === false || in_array($class, $this->noBorderTypes)) {
+		if (!$themeBorder) $themeBorder = $inputfield->getSetting('themeBorder');
+		if (!$themeOffset) $themeOffset = $inputfield->getSetting('themeOffset'); // || in_array($class, $this->offsetTypes);
+		if (!$themeColor) $themeColor = $inputfield->getSetting('themeColor');
+		if (!$themeInputSize) $themeInputSize = $inputfield->getSetting('themeInputSize');
+		if (!$themeInputWidth) $themeInputWidth = $inputfield->getSetting('themeInputWidth');
+		if (!$themeBlank) $themeBlank = $inputfield->getSetting('themeBlank');
+		if (!$hideFieldTitle) $hideFieldTitle = $inputfield->getSetting('hideFieldTitle');
+
+		if (!$themeBorder) {
+			if ($formSettings['useBorders'] === false || in_array($class, $this->noBorderTypes)) {
 				$themeBorder = (!$columnWidth || $columnWidth == 100) ? 'none' : 'hide';
-			} else if(in_array($class, $this->cardTypes)) {
+			} else if (in_array($class, $this->cardTypes)) {
 				$themeBorder = 'card';
 			} else {
-//				$themeBorder = 'line';
+				//				$themeBorder = 'line';
 			}
 		}
-		
-		if($themeInputSize && $globalInputSize != $themeInputSize) {
-			if($globalInputSize === 's') {
+
+		if ($themeInputSize && $globalInputSize != $themeInputSize) {
+			if ($globalInputSize === 's') {
 				$removeInputClasses[] = 'uk-form-small';
-			} else if($globalInputSize === 'l') {
+			} else if ($globalInputSize === 'l') {
 				$removeInputClasses[] = 'uk-form-large';
 			}
-			if($themeInputSize === 'm') {
+			if ($themeInputSize === 'm') {
 				$inputClasses[] = 'uk-form-medium';
-			} else if($themeInputSize === 's') {
+			} else if ($themeInputSize === 's') {
 				$inputClasses[] = 'uk-form-small';
-			} else if($themeInputSize === 'l') {
+			} else if ($themeInputSize === 'l') {
 				$inputClasses[] = 'uk-form-large';
 			}
 		}
-	
-		if($themeInputWidth) {
+
+		if ($themeInputWidth) {
 			$inputWidthClasses = array(
 				'xs' => 'uk-form-width-xsmall',
 				's' => 'uk-form-width-small',
@@ -404,61 +408,81 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 				'f' => 'InputfieldMaxWidth',
 			);
 			$inputfield->removeClass($inputWidthClasses);
-			if(isset($inputWidthClasses[$themeInputWidth])) {
+			if (isset($inputWidthClasses[$themeInputWidth])) {
 				$inputClasses[] = $inputWidthClasses[$themeInputWidth];
-				if($themeInputWidth != 'f') $inputClasses[] = 'InputfieldSetWidth';
+				if ($themeInputWidth != 'f') $inputClasses[] = 'InputfieldSetWidth';
 			}
 		}
-		
-		if($hideFieldTitle) {
+
+		if ($hideFieldTitle) {
 			$wrapClasses[] = 'hide-field-title';
 		}
-      if($themeBlank) {
+		if ($themeBlank) {
 			$inputClasses[] = 'uk-form-blank';
 		}
 
-		if($themeColor) {
+		if ($themeColor) {
 			$wrapClasses[] = 'InputfieldIsColor';
 		}
-		
-		switch($themeColor) {
-			case 'primary': $wrapClasses[] = 'InputfieldIsPrimary'; break;
-			case 'secondary': $wrapClasses[] = 'InputfieldIsSecondary'; break;
-			case 'warning': $wrapClasses[] = 'InputfieldIsWarning'; break;
-			case 'danger': $wrapClasses[] = 'InputfieldIsError'; break;
-			case 'success': $wrapClasses[] = 'InputfieldIsSuccess'; break;
-			case 'highlight': $wrapClasses[] = 'InputfieldIsHighlight'; break;
-			case 'none': break;
+
+		switch ($themeColor) {
+			case 'primary':
+				$wrapClasses[] = 'InputfieldIsPrimary';
+				break;
+			case 'secondary':
+				$wrapClasses[] = 'InputfieldIsSecondary';
+				break;
+			case 'warning':
+				$wrapClasses[] = 'InputfieldIsWarning';
+				break;
+			case 'danger':
+				$wrapClasses[] = 'InputfieldIsError';
+				break;
+			case 'success':
+				$wrapClasses[] = 'InputfieldIsSuccess';
+				break;
+			case 'highlight':
+				$wrapClasses[] = 'InputfieldIsHighlight';
+				break;
+			case 'none':
+				break;
 		}
-		
-		switch($themeBorder) {
-			case 'none': $wrapClasses[] = 'InputfieldNoBorder'; break;
-			case 'hide': $wrapClasses[] = 'InputfieldHideBorder'; break;
-            case 'line': $wrapClasses[] = 'InputfieldShowBorder'; break;
-			case 'card': $wrapClasses[] = 'uk-card uk-card-default'; break;
+
+		switch ($themeBorder) {
+			case 'none':
+				$wrapClasses[] = 'InputfieldNoBorder';
+				break;
+			case 'hide':
+				$wrapClasses[] = 'InputfieldHideBorder';
+				break;
+			case 'line':
+				$wrapClasses[] = 'InputfieldShowBorder';
+				break;
+			case 'card':
+				$wrapClasses[] = 'uk-card uk-card-default';
+				break;
 		}
-		
-		if($themeOffset && $themeOffset !== 'none') {
+
+		if ($themeOffset && $themeOffset !== 'none') {
 			$wrapClasses[] = 'InputfieldIsOffset';
-			if($themeOffset === 's') {
+			if ($themeOffset === 's') {
 				$wrapClasses[] = 'InputfieldIsOffsetSm';
-			} else if($themeOffset === 'l') {
+			} else if ($themeOffset === 'l') {
 				$wrapClasses[] = 'InputfieldIsOffsetLg';
 			}
 		}
-		
-		if(count($inputClasses)) {
+
+		if (count($inputClasses)) {
 			$inputfield->addClass(implode(' ', $inputClasses));
 		}
-		
-		if(count($removeInputClasses)) {
+
+		if (count($removeInputClasses)) {
 			$inputfield->removeClass($removeInputClasses);
 		}
-		
-		if(count($wrapClasses)) {
+
+		if (count($wrapClasses)) {
 			$inputfield->addClass(implode(' ', $wrapClasses), 'wrapClass');
 		}
-		
 	}
 
 	/**
@@ -468,16 +492,16 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 * 
 	 */
 	public function hookAfterInputfieldGetConfigInputfields(HookEvent $event) {
-		
+
 		/** @var Inputfield $inputfield */
 		$inputfield = $event->object;
-		if($inputfield instanceof InputfieldWrapper) return;
+		if ($inputfield instanceof InputfieldWrapper) return;
 		/** @var InputfieldWrapper $inputfields */
 		$inputfields = $event->return;
-		if(!$inputfields instanceof InputfieldWrapper) return;
-		include_once(dirname(__FILE__) . '/config.php'); 
+		if (!$inputfields instanceof InputfieldWrapper) return;
+		include_once(dirname(__FILE__) . '/config.php');
 		$configHelper = new AdminThemeUikitConfigHelper($this);
-		$configHelper->configInputfield($inputfield, $inputfields); 
+		$configHelper->configInputfield($inputfield, $inputfields);
 	}
 
 	/**
@@ -511,16 +535,15 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		/** @var MarkupAdminDataTable $table */
 		$table = $event->object;
 		$classes = array();
-		if($table->responsive) $classes[] = 'pw-table-responsive uk-overflow-auto';
-		if($table->sortable) $classes[] = 'pw-table-sortable'; 
-		if($table->resizable) $classes[] = 'pw-table-resizable'; 
-		if(count($classes)) {
+		if ($table->responsive) $classes[] = 'pw-table-responsive uk-overflow-auto';
+		if ($table->sortable) $classes[] = 'pw-table-sortable';
+		if ($table->resizable) $classes[] = 'pw-table-resizable';
+		if (count($classes)) {
 			$class = implode(' ', $classes);
 			$event->return = "<div class='$class'>$event->return</div>";
 		}
-		
 	}
-	
+
 	/**
 	 * Event called when a page is saved or modules refreshed to clear caches
 	 *
@@ -529,7 +552,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 */
 	public function hookClearCaches(HookEvent $event) {
 		$page = $event->arguments(0);
-		if(is_null($page) || ($page instanceof Page && $page->template == 'admin')) {
+		if (is_null($page) || ($page instanceof Page && $page->template == 'admin')) {
 			$this->wire('session')->removeFor($this, 'prnav');
 			$this->wire('session')->message("Cleared the admin theme navigation cache (primary nav)", Notice::debug);
 		}
@@ -543,13 +566,13 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 */
 	public function hookAfterLoginURL(HookEvent $event) {
 		$layout = $this->layout;
-		if(!$layout) return;
+		if (!$layout) return;
 		$url = $event->return;
 		$url .= (strpos($url, '?') !== false ? '&' : '?') . "layout=$this->layout-init";
 		$event->return = $url;
 	}
 
-	
+
 	/*******************************************************************************************
 	 * MARKUP RENDERING METHODS
 	 *
@@ -563,26 +586,26 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 */
 	public function ___renderBreadcrumbs() {
 
-		if(!$this->isLoggedIn || $this->isModal) return '';
+		if (!$this->isLoggedIn || $this->isModal) return '';
 		$process = $this->wire('page')->process;
-		if($process == 'ProcessPageList') return '';
+		if ($process == 'ProcessPageList') return '';
 		$breadcrumbs = $this->wire('breadcrumbs');
 		$out = '';
 
 		// don't show breadcrumbs if only one of them (subjective)
-		if(count($breadcrumbs) < 2 && $process != 'ProcessPageEdit') return '';
+		if (count($breadcrumbs) < 2 && $process != 'ProcessPageEdit') return '';
 
-		if(strpos($this->layout, 'sidenav') === false) {
+		if (strpos($this->layout, 'sidenav') === false) {
 			$out = "<li>" . $this->renderQuickTreeLink() . "</li>";
 		}
 
-		foreach($breadcrumbs as $breadcrumb) {
+		foreach ($breadcrumbs as $breadcrumb) {
 			$title = $breadcrumb->get('titleMarkup');
-			if(!$title) $title = $this->wire('sanitizer')->entities1($this->_($breadcrumb->title));
+			if (!$title) $title = $this->wire('sanitizer')->entities1($this->_($breadcrumb->title));
 			$out .= "<li><a href='$breadcrumb->url'>$title</a></li>";
 		}
 
-		if($out) $out = "<ul class='uk-breadcrumb'>$out</ul>";
+		if ($out) $out = "<ul class='uk-breadcrumb'>$out</ul>";
 
 		return $out;
 	}
@@ -597,12 +620,12 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 
 		$items = array();
 
-		foreach($this->getAddNewActions() as $item) {
+		foreach ($this->getAddNewActions() as $item) {
 			$icon = $this->renderNavIcon($item['icon']);
 			$items[] = "<li><a href='$item[url]'>$icon$item[label]</a></li>";
 		}
 
-		if(!count($items)) return '';
+		if (!count($items)) return '';
 
 		$out = implode('', $items);
 		$label = $this->getAddNewLabel();
@@ -626,7 +649,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	public function renderNotices($notices, array $options = array()) {
 
 		$defaults = array(
-			'groupByType' => $this->groupNotices ? true : false, 
+			'groupByType' => $this->groupNotices ? true : false,
 			'messageClass' => 'NoticeMessage uk-alert uk-alert-primary', // class for messages
 			'messageIcon' => 'check-square', // default icon to show with notices
 			'warningClass' => 'NoticeWarning uk-alert uk-alert-warning', // class for warnings
@@ -639,13 +662,13 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 			'closeIcon' => 'times', // icon for close notices link
 			'listMarkup' => "<ul class='pw-notices' id='notices'>{out}</ul><!--/notices-->",
 			'itemMarkup' =>
-				"<li class='{class}'>" .
-					"<div class='pw-container uk-container uk-container-expand'>{remove}{icon}{text}</div>" .
+			"<li class='{class}'>" .
+				"<div class='pw-container uk-container uk-container-expand'>{remove}{icon}{text}</div>" .
 				"</li>"
 		);
 
 		$options = array_merge($defaults, $options);
-		
+
 		return parent::renderNotices($notices, $options);
 	}
 
@@ -659,42 +682,42 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 *
 	 */
 	protected function renderPrimaryNavItem(array $item) {
-      
-      $icon = '';
-      $title = '';
-      
-      if($this->get('nav-icons') === 'nav-show-icons' || $this->get('nav-icons') === 'nav-show-icontext') {
-            $icon = $item['icon'] ? $this->renderNavIcon($item['icon']) : '';
-          } 
-      
-      if($this->get('nav-icons') === 'nav-show-text' || $this->get('nav-icons') === 'nav-show-icontext') {
-            $title = $item['title'];
-          } 
-      
+
+		$icon = '';
+		$title = '';
+
+		if ($this->get('nav-icons') === 'nav-show-icons' || $this->get('nav-icons') === 'nav-show-icontext') {
+			$icon = $item['icon'] ? $this->renderNavIcon($item['icon']) : '';
+		}
+
+		if ($this->get('nav-icons') === 'nav-show-text' || $this->get('nav-icons') === 'nav-show-icontext') {
+			$title = $item['title'];
+		}
+
 		$out = "<li class='page-$item[id]-'>";
 
-		if(!count($item['children'])) {
+		if (!count($item['children'])) {
 			$out .= "<a href='$item[url]'>$icon$title</a></li>";
 			return $out;
 		}
 
 		$out .=
 			"<a href='$item[url]' " .
-				"id='prnav-page-$item[id]' " .
-				"data-from='prnav-page-$item[parent_id]' " .
-                "title='$item[title]'" .
-				"class='pw-dropdown-toggle nav-$item[name]'>" .
-				"$icon$title</a>";
+			"id='prnav-page-$item[id]' " .
+			"data-from='prnav-page-$item[parent_id]' " .
+			"title='$item[title]'" .
+			"class='pw-dropdown-toggle nav-$item[name]'>" .
+			"$icon$title</a>";
 
 		$my = 'left top';
-        $at= 'left bottom';
-		if(in_array($item['name'], array('access', 'setup', 'module'))){ 
-          $my = 'right top'; 
-          $at = 'right bottom';
-          }
+		$at = 'left bottom';
+		if (in_array($item['name'], array('access', 'setup', 'module'))) {
+			$my = 'right top';
+			$at = 'right bottom';
+		}
 		$out .=
 			"<ul class='pw-dropdown-menu prnav $item[name]' data-my='$my' data-at='$at'>" .
-				$this->renderPrimaryNavItemChildren($item['children']) .
+			$this->renderPrimaryNavItemChildren($item['children']) .
 			"</ul>" .
 			"</li>";
 
@@ -711,28 +734,25 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	protected function renderPrimaryNavItemChildren(array $items) {
 		$out = '';
 
-		foreach($items as $item) {
-          
-            $icon = empty($item['icon']) ? '' : $this->renderNavIcon($item['icon']);
+		foreach ($items as $item) {
+
+			$icon = empty($item['icon']) ? '' : $this->renderNavIcon($item['icon']);
 			$title = $item['title'];
 			$out .= "<li class='page-$item[id]- nav-$item[name]'>";
 
-			if(!empty($item['children'])) {
+			if (!empty($item['children'])) {
 				$out .=
 					"<a class='pw-has-items' data-from='prnav-page-$item[parent_id]' href='$item[url]'>$icon$title</a>" .
 					"<ul>" . $this->renderPrimaryNavItemChildren($item['children']) . "</ul>";
+			} else if (!empty($item['navJSON'])) {
 
-			} else if(!empty($item['navJSON'])) {
-              
-                $out .=
+				$out .=
 					"<a class='pw-has-items pw-has-ajax-items' " .
-						"data-from='prnav-page-$item[parent_id]' " .
-						"data-json='$item[navJSON]' " .
-						"href='$item[url]'>$icon$title" .
+					"data-from='prnav-page-$item[parent_id]' " .
+					"data-json='$item[navJSON]' " .
+					"href='$item[url]'>$icon$title" .
 					"</a>" .
 					"<ul class='subnav-$item[name]'></ul>";
-              
-				
 			} else {
 				$out .= "<a href='$item[url]'>$icon$title</a>";
 			}
@@ -748,33 +768,31 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 * @return string
 	 *
 	 */
-	public function renderPrimaryNavItems($option="") {
+	public function renderPrimaryNavItems($option = "") {
 
-//$cache = self::dev ? '' : $this->wire('session')->getFor($this, 'prnav');
-//if($cache) {
-//$this->markCurrentNavItems($cache);
-//return $cache;
-//}
+		//$cache = self::dev ? '' : $this->wire('session')->getFor($this, 'prnav');
+		//if($cache) {
+		//$this->markCurrentNavItems($cache);
+		//return $cache;
+		//}
 
 
 		$out = '';
 		$items = $this->getPrimaryNavArray();
 
-		foreach($items as $item) {
+		foreach ($items as $item) {
 
-          if($item['name'] === "page" && $option === "notFirst") {
-            
-          } else {
-            $out .= $this->renderPrimaryNavItem($item);
-          }
-          
-          if($item['name'] === "page" && $option === "first") {
-                        break;
-           }
+			if ($item['name'] === "page" && $option === "notFirst") {
+			} else {
+				$out .= $this->renderPrimaryNavItem($item);
+			}
 
+			if ($item['name'] === "page" && $option === "first") {
+				break;
+			}
 		}
 
-		if(!self::dev) $this->wire('session')->setFor($this, 'prnav', $out);
+		if (!self::dev) $this->wire('session')->setFor($this, 'prnav', $out);
 		$this->markCurrentNavItems($out);
 
 		return $out;
@@ -792,7 +810,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 
 		$cache = self::dev ? '' : $this->wire('session')->getFor($this, 'sidenav');
 
-		if($cache) {
+		if ($cache) {
 			$this->markCurrentNavItems($cache);
 			return $cache;
 		}
@@ -801,26 +819,26 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$items = $this->getPrimaryNavArray();
 		$ukNav = "class='uk-nav-sub uk-nav-default uk-nav-parent-icon' data-uk-nav='animation: false; multiple: true;'";
 
-		foreach($items as $item) {
+		foreach ($items as $item) {
 
 			$class = "page-$item[id]- nav-$item[name]";
 			$subnav = '';
 
-			foreach($item['children'] as $child) {
+			foreach ($item['children'] as $child) {
 				$icon = $child['icon'] ? $this->renderNavIcon($child['icon']) : '';
 				$childClass = "page-$child[id]-";
 				$childAttr = "";
 				$childNav = '';
-				if(count($child['children'])) {
+				if (count($child['children'])) {
 					$childClass .= ' uk-parent';
 					$childNavList = $this->renderPrimaryNavItemChildren($child['children']);
 					$childIcon = $this->renderNavIcon('arrow-circle-right');
 					$childNav =
 						"<ul $ukNav>" .
-							"<li class='pw-nav-dup'><a href='$child[url]'>$childIcon$child[title]</a></li>" .
-							$childNavList .
+						"<li class='pw-nav-dup'><a href='$child[url]'>$childIcon$child[title]</a></li>" .
+						$childNavList .
 						"</ul>";
-				} else if($child['navJSON']) {
+				} else if ($child['navJSON']) {
 					$childClass .= ' uk-parent';
 					$childAttr = " class='pw-has-items pw-has-ajax-items' data-json='$child[navJSON]'";
 					$childNav = "<ul $ukNav></ul>";
@@ -829,19 +847,19 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 				$subnav .= $childNav . "</li>";
 			}
 
-			if($subnav) {
+			if ($subnav) {
 				$icon = $this->renderNavIcon($item['icon']);
 				$class .= " uk-parent";
 				$subnav =
 					"<ul $ukNav>" .
 					"<li class='pw-nav-dup'><a href='$item[url]'>$icon$item[title]</a></li>" .
-						$subnav .
+					$subnav .
 					"</ul>";
 			}
 
 			$out .=
 				"<li class='$class'><a href='$item[url]' id='sidenav-page-$item[id]'>$item[title]</a>" .
-					$subnav .
+				$subnav .
 				"</li>";
 		}
 
@@ -849,8 +867,8 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$userNav = $this->renderUserNavItems();
 		$out .=
 			"<li class='uk-parent'>" .
-				"<a href='#'>" . $this->renderUserNavLabel() . "</a>" .
-				"<ul $ukNav>$userNav</ul>" .
+			"<a href='#'>" . $this->renderUserNavLabel() . "</a>" .
+			"<ul $ukNav>$userNav</ul>" .
 			"</li>";
 
 		$this->wire('session')->setFor($this, 'sidenav', $out);
@@ -858,7 +876,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 
 		return $out;
 	}
-	
+
 	/**
 	 * Identify current items in the primary nav and add appropriate classes to them
 	 *
@@ -870,7 +888,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 */
 	protected function markCurrentNavItems(&$out) {
 		$page = $this->wire('page');
-		foreach($page->parents()->and($page) as $p) {
+		foreach ($page->parents()->and($page) as $p) {
 			$out = str_replace("page-$p-", "page-$p- uk-active uk-open", $out);
 		}
 	}
@@ -887,54 +905,54 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$userLabel = $this->get('userLabel');
 		$userAvatar = $this->get('userAvatar');
 		$defaultIcon = 'user-circle';
-		
-		if(strpos($userLabel, '{') !== false) {
-			if(strpos($userLabel, '{Name}') !== false) {
+
+		if (strpos($userLabel, '{') !== false) {
+			if (strpos($userLabel, '{Name}') !== false) {
 				$userLabel = str_replace('{Name}', ucfirst($user->name), $userLabel);
-			} else if(strpos($userLabel, '{name}') !== false) {
+			} else if (strpos($userLabel, '{name}') !== false) {
 				$userLabel = str_replace('{name}', $user->name, $userLabel);
 			}
-			if(strpos($userLabel, '{') !== false) {
+			if (strpos($userLabel, '{') !== false) {
 				$userLabel = $user->getText($userLabel, true, true);
 			}
 		} else {
 			$userLabel = $this->wire('sanitizer')->entities($userLabel);
 		}
-		
-		if($userAvatar) {
-			if($userAvatar === 'gravatar') {
-				if($user->email) {
+
+		if ($userAvatar) {
+			if ($userAvatar === 'gravatar') {
+				if ($user->email) {
 					$url = "https://www.gravatar.com/avatar/" . md5(strtolower(trim($user->email))) . "?s=80&d=mm&r=g";
 					$userAvatar = "<img class='pw-avatar' src='$url' alt='$user->name' />&nbsp;";
 				} else {
-					$userAvatar = $this->renderNavIcon("$defaultIcon fa-lg"); 
+					$userAvatar = $this->renderNavIcon("$defaultIcon fa-lg");
 				}
-			} else if(strpos($userAvatar, 'icon.') === 0) {
-				list(,$icon) = explode('.', $userAvatar); 
-				$userAvatar = $this->renderNavIcon("$icon fa-lg"); 
-			} else if(strpos($userAvatar, ':')) {
-				list($fieldID, $fieldName) = explode(':', $userAvatar); 
+			} else if (strpos($userAvatar, 'icon.') === 0) {
+				list(, $icon) = explode('.', $userAvatar);
+				$userAvatar = $this->renderNavIcon("$icon fa-lg");
+			} else if (strpos($userAvatar, ':')) {
+				list($fieldID, $fieldName) = explode(':', $userAvatar);
 				$field = $this->wire('fields')->get($fieldName);
-				if(!$field || !$field->type instanceof FieldtypeImage) {
-					$field = $this->wire('fields')->get((int) $fieldID); 
+				if (!$field || !$field->type instanceof FieldtypeImage) {
+					$field = $this->wire('fields')->get((int) $fieldID);
 				}
-				if($field && $field->type instanceof FieldtypeImage) {
-					$value = $user->get($field->name); 
-					if($value instanceof Pageimages) $value = $value->first();
-					if($value instanceof Pageimage) {
-						$value = $value->size(60, 60); 
+				if ($field && $field->type instanceof FieldtypeImage) {
+					$value = $user->get($field->name);
+					if ($value instanceof Pageimages) $value = $value->first();
+					if ($value instanceof Pageimage) {
+						$value = $value->size(60, 60);
 						$userAvatar	= "<img class='pw-avatar' src='$value->url' alt='$user->name' />&nbsp;";
 					} else {
-						$userAvatar = $this->renderNavIcon("$defaultIcon fa-lg"); 
+						$userAvatar = $this->renderNavIcon("$defaultIcon fa-lg");
 					}
 				} else {
 					$userAvatar = '';
 				}
 			}
 		}
-	
-		if($userAvatar) $userLabel = $userAvatar . $userLabel;
-		
+
+		if ($userAvatar) $userLabel = $userAvatar . $userLabel;
+
 		return $userLabel;
 	}
 
@@ -949,7 +967,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$items = $this->getUserNavArray();
 		$out = '';
 
-		foreach($items as $item) {
+		foreach ($items as $item) {
 			$label = $this->wire('sanitizer')->entities($item['title']);
 			$icon = isset($item['icon']) ? $this->renderNavIcon($item['icon']) : ' ';
 			$target = isset($item['target']) ? " target='$item[target]'" : '';
@@ -973,7 +991,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$url = $this->wire('urls')->admin . 'page/';
 		return
 			"<a class='pw-panel' href='$url' data-tab-text='$tree' data-tab-icon='$icon' title='$tree'>" .
-				$this->renderNavIcon($icon) . $text .
+			$this->renderNavIcon($icon) . $text .
 			"</a>";
 	}
 
@@ -988,22 +1006,22 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 * 
 	 */
 	public function getLogo(array $options = array()) {
-		
+
 		/** @var Config $config */
 		$config = $this->wire('config');
 		/** @var Sanitizer $sanitizer */
 		$sanitizer = $this->wire('sanitizer');
-		
+
 		$defaults = array(
-			'getURL' => false, 
+			'getURL' => false,
 			'getNative' => false,
 			'alt' => '',
 		);
-	
+
 		$options = array_merge($defaults, $options);
 		$logoURL = $this->get('logoURL');
-		
-		if(empty($logoURL) || $options['getNative'] || strpos($logoURL, '//') !== false) {
+
+		if (empty($logoURL) || $options['getNative'] || strpos($logoURL, '//') !== false) {
 			$native = true;
 			$logoURL = $config->urls($this->className()) . self::logo;
 		} else {
@@ -1011,11 +1029,11 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 			$logoURL = $sanitizer->entities($logoURL);
 			$native = false;
 		}
-		
-		if($options['getURL']) return $logoURL;
-	
+
+		if ($options['getURL']) return $logoURL;
+
 		$alt = $options['alt'];
-		if(empty($alt) && $this->wire('user')->isLoggedin()) {
+		if (empty($alt) && $this->wire('user')->isLoggedin()) {
 			$alt = "ProcessWire $config->version";
 		}
 		$class = 'pw-logo ' . ($native ? 'pw-logo-native' : 'pw-logo-custom');
@@ -1025,7 +1043,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$info = pathinfo($logoURL);
 		$uksvg = $info['extension'] == 'svg' ? 'uk-svg' : '';
 		$img = "<img class='$class' src='$logoURL' alt='$alt' $uksvg />";
-		
+
 		return $img;
 	}
 
@@ -1050,16 +1068,16 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$cssURL = $this->get('cssURL');
 		$moduleInfo = self::getModuleInfo();
 		$version = $moduleInfo['version'];
-		if($cssURL) {
-			if(strpos($cssURL, '//') === false) $cssURL = $config->urls->root . ltrim($cssURL, '/');
+		if ($cssURL) {
+			if (strpos($cssURL, '//') === false) $cssURL = $config->urls->root . ltrim($cssURL, '/');
 			return $this->wire('sanitizer')->entities($cssURL);
-		} else if(self::dev && strpos(__FILE__, '/wire/modules/') === false) {
+		} else if (self::dev && strpos(__FILE__, '/wire/modules/') === false) {
 			return $config->urls->adminTemplates . 'uikit/custom/pw.css?v=' . $version;
 		} else {
 			return $config->urls->adminTemplates . 'uikit/dist/css/uikit.theme.css?v=' . $version;
 		}
 	}
-	
+
 	/**
 	 * Get Javascript that must be present in the document <head>
 	 *
@@ -1067,12 +1085,12 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 	 *
 	 */
 	public function getHeadJS() {
-	
+
 		$data = $this->wire('config')->js('adminTheme');
-		if(!is_array($data)) $data = array();
+		if (!is_array($data)) $data = array();
 		$data['logoAction'] = (int) $this->logoAction;
 		$this->wire('config')->js('adminTheme', $data);
-		
+
 		return parent::getHeadJS();
 	}
 
