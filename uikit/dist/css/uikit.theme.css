@@ -18365,9 +18365,9 @@ table .InputfieldIsOffset,
   padding-top: 0.4em;
 }
 /*hide repeater heder if only one element*/
-.InputfieldRepeater[data-min="1"][data-max="1"] .InputfieldRepeaterHeaderInit {
+/* .InputfieldRepeater[data-min="1"][data-max="1"] .InputfieldRepeaterHeaderInit {
   display: none;
-}
+} */
 .InputfieldRepeater {
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
