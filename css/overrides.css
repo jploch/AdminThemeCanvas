@@ -22,3 +22,13 @@
 .InputfieldRepeater[data-min='9'][data-max='9'] .InputfieldRepeaterItemControls > i:not(.toggle-icon) {
  display: none !important;
 }
+
+/* new page version notices */
+#pw-mastheads .NotificationBug {
+   position: fixed;
+   background: #848484;
+   left: 8px;
+   right: auto;
+   color: black;
+   top: 13px;
+}
