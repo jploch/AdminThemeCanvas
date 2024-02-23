@@ -45,7 +45,3 @@
 #NotificationMenu {
    z-index: 9995;
 }
-
-#NotificationMenu .pw-container {
-   max-width:none;
-}
