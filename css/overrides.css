@@ -39,9 +39,13 @@
 }
 
 .permission-pagegrid-add #NotificationList li {
-   padding: 10px 10px 10px 60px;
+   padding: 10px 10px 10px 70px;
 }
 
 #NotificationMenu {
    z-index: 9995;
+}
+
+#NotificationMenu .pw-container {
+   max-width:none;
 }
