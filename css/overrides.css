@@ -38,10 +38,6 @@
    opacity: 1;
 }
 
-.permission-pagegrid-add #NotificationList li {
-   padding: 10px 10px 10px 80px;
-}
-
 #NotificationMenu {
    z-index: 9995;
 }
