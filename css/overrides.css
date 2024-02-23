@@ -25,10 +25,23 @@
 
 /* new page version notices */
 #pw-mastheads .NotificationBug {
-   position: fixed;
-   background: #848484;
-   left: 8px;
-   right: auto;
+   /* background: #848484; */
    color: black;
-   top: 13px;
+   position: static;
+   margin-left: 10px;
+   background-image: none;
+   opacity: 1;
+}
+
+#NotificationList li {
+   padding: 10px 40px;
+   opacity: 1;
+}
+
+.permission-pagegrid-add #NotificationList li {
+   padding: 10px 10px 10px 60px;
+}
+
+#NotificationMenu {
+   z-index: 9995;
 }

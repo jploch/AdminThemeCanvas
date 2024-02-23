@@ -6,6 +6,9 @@ $(document).ready(function () {
     return false;
   }
 
+  //NEW add notification button to nav
+  $('#NotificationBug').appendTo('#pw-masthead .uk-navbar-left');
+
   //add placeholder to login inputs
   $('#login_name').attr('placeholder', $('#wrap_login_name label').text());
   $('#login_pass').attr('placeholder', $('#wrap_login_pass label').text());
