@@ -47,3 +47,7 @@
    top:0;
    z-index: 99;
 }
+
+#pw-mastheads #notices {
+   border-bottom: 1px solid #00000012;
+}
