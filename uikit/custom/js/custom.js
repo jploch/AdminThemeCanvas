@@ -14,7 +14,9 @@ $(document).ready(function () {
   $('#login_pass').attr('placeholder', $('#wrap_login_pass label').text());
 
   // title to settings tab
-  $('.hide-title #ProcessPageEditSettings').find('.Inputfields').first().prepend($('.InputfieldPageTitle').first());
+  if (!$('body').hasClass('ProcessLanguage')) {
+    $('.hide-title #ProcessPageEditSettings').find('.Inputfields').first().prepend($('.InputfieldPageTitle').first());
+  }
 
   // fix dropdowns on the right 
   $(document).on("mouseenter", ".pw-dropdown-menu", function (e) {
