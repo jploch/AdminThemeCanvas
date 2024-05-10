@@ -12,15 +12,15 @@
 .InputfieldRepeater[data-min='7'][data-max='7'] .InputfieldRepeaterAddItem,
 .InputfieldRepeater[data-min='8'][data-max='8'] .InputfieldRepeaterAddItem,
 .InputfieldRepeater[data-min='9'][data-max='9'] .InputfieldRepeaterAddItem,
-.InputfieldRepeater[data-min='2'][data-max='2'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
-.InputfieldRepeater[data-min='3'][data-max='3'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
-.InputfieldRepeater[data-min='4'][data-max='4'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
-.InputfieldRepeater[data-min='5'][data-max='5'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
-.InputfieldRepeater[data-min='6'][data-max='6'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
-.InputfieldRepeater[data-min='7'][data-max='7'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
-.InputfieldRepeater[data-min='8'][data-max='8'] .InputfieldRepeaterItemControls > i:not(.toggle-icon),
-.InputfieldRepeater[data-min='9'][data-max='9'] .InputfieldRepeaterItemControls > i:not(.toggle-icon) {
- display: none !important;
+.InputfieldRepeater[data-min='2'][data-max='2'] .InputfieldRepeaterItemControls>i:not(.toggle-icon),
+.InputfieldRepeater[data-min='3'][data-max='3'] .InputfieldRepeaterItemControls>i:not(.toggle-icon),
+.InputfieldRepeater[data-min='4'][data-max='4'] .InputfieldRepeaterItemControls>i:not(.toggle-icon),
+.InputfieldRepeater[data-min='5'][data-max='5'] .InputfieldRepeaterItemControls>i:not(.toggle-icon),
+.InputfieldRepeater[data-min='6'][data-max='6'] .InputfieldRepeaterItemControls>i:not(.toggle-icon),
+.InputfieldRepeater[data-min='7'][data-max='7'] .InputfieldRepeaterItemControls>i:not(.toggle-icon),
+.InputfieldRepeater[data-min='8'][data-max='8'] .InputfieldRepeaterItemControls>i:not(.toggle-icon),
+.InputfieldRepeater[data-min='9'][data-max='9'] .InputfieldRepeaterItemControls>i:not(.toggle-icon) {
+   display: none !important;
 }
 
 /* new page version notices */
@@ -44,10 +44,25 @@
 
 #pw-mastheads {
    position: sticky;
-   top:0;
+   top: 0;
    z-index: 99;
 }
 
 #pw-mastheads #notices {
    border-bottom: 1px solid #00000017;
+}
+
+#main #pw-dropdown-toggle-submit_save,
+#main #pw-dropdown-toggle-submit_save_unpublished,
+#main #pw-dropdown-toggle-submit_publish {
+   display: inline-block !important;
+   padding: 0 13px !important;
+   border-left-color: rgba(255, 255, 255, .7) !important;
+}
+
+#submit_save.pw-button-dropdown-main,
+#submit_save_unpublished.pw-button-dropdown-main,
+#submit_publish.pw-button-dropdown-main {
+   border-top-right-radius: 0 !important;
+   border-bottom-right-radius: 0 !important;
 }

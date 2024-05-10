@@ -29,7 +29,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 			"title" => "Admin Theme Canvas",
 			"summary" => "A minimal theme with optimised page editor UI, based on Uikit 3",
 			"href" => "https://github.com/jploch/AdminThemeCanvas",
-			"version" => "0.75",
+			"version" => "0.76",
 			"author" => "Jan Ploch",
 			"icon" => "paint-brush",
 			'autoload' => 'template=admin',
