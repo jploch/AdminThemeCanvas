@@ -29,7 +29,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 			"title" => "Admin Theme Canvas",
 			"summary" => "A minimal theme with optimised page editor UI, based on Uikit 3",
 			"href" => "https://github.com/jploch/AdminThemeCanvas",
-			"version" => "0.76",
+			"version" => "0.77",
 			"author" => "Jan Ploch",
 			"icon" => "paint-brush",
 			'autoload' => 'template=admin',
@@ -683,6 +683,11 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 
 		$icon = '';
 		$title = '';
+
+		//new change setup icon
+		if($item['name'] == 'setup') $item['icon'] = 'wrench';
+		// if($item['name'] == 'setup') $item['icon'] = 'sliders';
+		//END new change setup icon
 
 		if ($this->get('nav-icons') === 'nav-show-icons' || $this->get('nav-icons') === 'nav-show-icontext') {
 			$icon = $item['icon'] ? $this->renderNavIcon($item['icon']) : '';

@@ -66,3 +66,7 @@
    border-top-right-radius: 0 !important;
    border-bottom-right-radius: 0 !important;
 }
+
+#pw-masthead .fa-wrench {
+   scale:1.1;
+}
