@@ -29,7 +29,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 			"title" => "Admin Theme Canvas",
 			"summary" => "A minimal theme with optimised page editor UI, based on Uikit 3",
 			"href" => "https://github.com/jploch/AdminThemeCanvas",
-			"version" => "0.77",
+			"version" => "0.78",
 			"author" => "Jan Ploch",
 			"icon" => "paint-brush",
 			'autoload' => 'template=admin',
@@ -120,7 +120,7 @@ class AdminThemeCanvas extends AdminThemeFramework implements Module, Configurab
 		$session = $this->wire('session');
 
 		//add new custom css overrides, so no need to compile everytime :)
-		$this->config->styles->add($this->config->urls->AdminThemeCanvas . "css/overrides.css");
+		$this->config->styles->add($this->config->urls->AdminThemeCanvas . "css/overrides.css?v=" . $this->modules->getModuleInfo('AdminThemeCanvas')['version']);
 
 		// add classes to show icons
 		$this->addHookBefore('AdminTheme::getExtraMarkup', function ($event) {
