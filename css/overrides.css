@@ -73,4 +73,7 @@
 
 .uk-tooltip.uk-tooltip {
    border-radius: 4px;
+   background-color: #4e4e4e;
+   color: #ffffff;
+   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
