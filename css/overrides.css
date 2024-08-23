@@ -77,3 +77,7 @@
    color: #ffffff;
    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
+
+#pw-masthead .uk-navbar {
+   align-items: center;
+}
