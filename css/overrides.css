@@ -81,3 +81,7 @@
 #pw-masthead .uk-navbar {
    align-items: center;
 }
+
+.ProcessModule #ModuleInfo table a {
+   text-decoration: underline;
+}
