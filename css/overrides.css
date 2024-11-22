@@ -85,3 +85,7 @@
 .ProcessModule #ModuleInfo table a {
    text-decoration: underline;
 }
+
+.ProcessModule #ModuleInfo table a:has(i) {
+   text-decoration: none;
+}
