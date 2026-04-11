@@ -1,3 +1,5 @@
+> DEPRECATED: I am no longer supporting AdminThemeCanvas. Now that the new native KONKAT theme is part of the ProcessWire core, this module is largely redundant. Thanks to everyone who used and supported it!. This repository will remain available for legacy projects but will not receive further updates. Note: To make the KONKAT theme behave more like this one you can install the AdminQuickTree module, which gives you direct access to the page tree navigation.
+
 # Admin Theme Canvas
 A minimal admin theme with optimised page editor UI, based on Uikit 3. 
 
